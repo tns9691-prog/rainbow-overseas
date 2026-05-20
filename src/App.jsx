@@ -9,6 +9,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 
 function App() {
+  document.title = "Rainbow Overseas";
   return (
     <Router>
       <Routes>
