@@ -97,10 +97,8 @@ function Home() {
               <select required value={formData.service} onChange={e => setFormData({...formData, service: e.target.value})}>
                 <option value="">Select a Service</option>
                 <option value="Study Abroad">Study Abroad</option>
-                <option value="Finance">Finance</option>
-                <option value="TAN">TAN</option>
-                <option value="Fage">Fage</option>
                 <option value="Travel Package">Travel Package</option>
+                <option value="Finance">Finance</option>
                 <option value="Insurance">Insurance</option>
               </select>
               <button type="submit" className="btn btn-dark" style={{width: '100%'}}>Get Free Counselling →</button>
@@ -116,10 +114,8 @@ function Home() {
           <div className="services-grid">
             {[
               { icon: '🎓', label: 'Abroad Education', path: '/abroad-education' },
-              { icon: '💰', label: 'Finance', path: '/finance' },
               { icon: '🏖️', label: 'Travel & Holidays', path: '/travel-holidays' },
-              { icon: '📊', label: 'TAN', path: '/tan' },
-              { icon: '🎯', label: 'Fage', path: '/fage' },
+              { icon: '💰', label: 'Finance', path: '/finance' },
               { icon: '🛡️', label: 'Insurance', path: '/insurance' },
             ].map(s => (
               <div key={s.label} className="service-icon-card">

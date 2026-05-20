@@ -3,8 +3,6 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import AbroadEducation from './pages/AbroadEducation';
 import Finance from './pages/Finance';
-import Tan from './pages/Tan';
-import Fage from './pages/Fage';
 import TravelHolidays from './pages/TravelHolidays';
 import Insurance from './pages/Insurance';
 import About from './pages/About';
@@ -19,8 +17,6 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="abroad-education" element={<AbroadEducation />} />
           <Route path="finance" element={<Finance />} />
-          <Route path="tan" element={<Tan />} />
-          <Route path="fage" element={<Fage />} />
           <Route path="travel-holidays" element={<TravelHolidays />} />
           <Route path="insurance" element={<Insurance />} />
           <Route path="contact" element={<Contact />} />
