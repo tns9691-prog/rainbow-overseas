@@ -22,9 +22,6 @@ function Footer() {
           <h3>Quick Links</h3>
           <ul>
             <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/success-stories">Success Stories</Link></li>
-            <li><Link to="/blog">Blog & Updates</Link></li>
-            <li><Link to="/careers">Careers</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
           </ul>
         </div>
@@ -36,8 +33,6 @@ function Footer() {
             <li><Link to="/travel-holidays">Travel & Holidays</Link></li>
             <li><Link to="/finance">Finance Services</Link></li>
             <li><Link to="/insurance">Insurance Services</Link></li>
-            <li><Link to="/success-stories">Success Stories</Link></li>
-            <li><Link to="/careers">Careers</Link></li>
           </ul>
         </div>
 

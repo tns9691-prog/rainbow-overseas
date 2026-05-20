@@ -34,9 +34,6 @@ function Navbar() {
             <li><NavLink to="/travel-holidays" onClick={() => setMenuOpen(false)}>Travel</NavLink></li>
             <li><NavLink to="/finance" onClick={() => setMenuOpen(false)}>Finance</NavLink></li>
             <li><NavLink to="/insurance" onClick={() => setMenuOpen(false)}>Insurance</NavLink></li>
-            <li><NavLink to="/success-stories" onClick={() => setMenuOpen(false)}>Success Stories</NavLink></li>
-            <li><NavLink to="/blog" onClick={() => setMenuOpen(false)}>Blog</NavLink></li>
-            <li><NavLink to="/careers" onClick={() => setMenuOpen(false)}>Careers</NavLink></li>
             <li><NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact Us</NavLink></li>
           </ul>
         </nav>
