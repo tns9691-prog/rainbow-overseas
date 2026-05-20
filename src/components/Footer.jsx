@@ -10,7 +10,7 @@ function Footer() {
             <span className="text-gradient">Rainbow</span> Overseas
           </Link>
           <p className="footer-desc">
-            Your Trusted Partner for Study Abroad, Travel, Visa & Insurance Services.
+            Your Trusted Partner for Education, Travel, Finance, and Insurance Services.
           </p>
           <div className="owner-info">
             <strong>T. Narsimha Swamy</strong>
@@ -22,22 +22,22 @@ function Footer() {
           <h3>Quick Links</h3>
           <ul>
             <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/success-stories">Success Stories</Link></li>
+            <li><Link to="/blog">Blog & Updates</Link></li>
+            <li><Link to="/careers">Careers</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
-            <li><Link to="/blog">Blog</Link></li>
-            <li><Link to="/gallery">Gallery</Link></li>
-            <li><Link to="/testimonials">Testimonials</Link></li>
           </ul>
         </div>
 
         <div className="footer-col services-col">
           <h3>All Services</h3>
           <ul>
-            <li><Link to="/abroad-education">Abroad Education</Link></li>
-            <li><Link to="/visa-services">Visa Services</Link></li>
+            <li><Link to="/abroad-education">Education Services</Link></li>
             <li><Link to="/travel-holidays">Travel & Holidays</Link></li>
-            <li><Link to="/car-rentals">Car Rentals</Link></li>
-            <li><Link to="/forex-services">Forex Services</Link></li>
+            <li><Link to="/finance">Finance Services</Link></li>
             <li><Link to="/insurance">Insurance Services</Link></li>
+            <li><Link to="/success-stories">Success Stories</Link></li>
+            <li><Link to="/careers">Careers</Link></li>
           </ul>
         </div>
 

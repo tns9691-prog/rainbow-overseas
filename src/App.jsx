@@ -6,6 +6,9 @@ import Finance from './pages/Finance';
 import TravelHolidays from './pages/TravelHolidays';
 import Insurance from './pages/Insurance';
 import About from './pages/About';
+import SuccessStories from './pages/SuccessStories';
+import Careers from './pages/Careers';
+import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 
 function App() {
@@ -19,6 +22,9 @@ function App() {
           <Route path="finance" element={<Finance />} />
           <Route path="travel-holidays" element={<TravelHolidays />} />
           <Route path="insurance" element={<Insurance />} />
+          <Route path="success-stories" element={<SuccessStories />} />
+          <Route path="careers" element={<Careers />} />
+          <Route path="blog" element={<Blog />} />
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>

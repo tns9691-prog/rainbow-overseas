@@ -39,7 +39,7 @@ const faqs = [
   { q: 'What is the process to apply for a student visa?', a: 'We guide you through every step: document preparation, bank statements, visa form filling, and interview preparation. Our high visa success rate speaks for itself.' },
   { q: 'How early should I start the study abroad process?', a: 'We recommend starting 12–18 months before your intended intake. Early starters have better university choices and scholarship opportunities.' },
   { q: 'Do you assist with education loans?', a: 'Yes! We partner with leading banks and NBFCs to help students secure collateral and non-collateral education loans at competitive interest rates.' },
-  { q: 'Can you help with travel and forex needs?', a: 'Absolutely. We offer complete travel packages, forex cards, currency exchange, and travel insurance under one roof for a hassle-free experience.' },
+  { q: 'Can you help with travel and other needs?', a: 'Absolutely. We offer complete travel packages, travel insurance, finance solutions, and comprehensive support for all your international needs under one roof.' },
 ];
 
 function Home() {
@@ -79,8 +79,8 @@ function Home() {
         <div className="container hero-container">
           <div className="hero-content animate-fade-in-up">
             <p className="hero-tag">🌍 Trusted by 1000+ Students</p>
-            <h1>Your Trusted Partner for <span className="text-gradient">Study Abroad, Travel, Visa & More</span></h1>
-            <p>From university selection to visa approval, holiday packages to car rentals — Rainbow Overseas is your one-stop destination for all international services.</p>
+            <h1>Your Trusted Partner for <span className="text-gradient">Education, Travel, Finance & More</span></h1>
+            <p>From university selection to travel planning, financial solutions to insurance — Rainbow Overseas is your one-stop destination for all international services.</p>
             <div className="hero-stats">
               <div className="stat"><strong>1000+</strong><span>Students Placed</span></div>
               <div className="stat"><strong>98%</strong><span>Visa Success</span></div>
@@ -134,7 +134,7 @@ function Home() {
             <p className="section-tag">WHO WE ARE</p>
             <h2>Rainbow Overseas — Your Lifelong Education & Travel Partner</h2>
             <p>At Rainbow Overseas, we believe every student deserves expert, honest, and personalised guidance. We don't push popular destinations or fixed packages — we take the time to understand your goals, budget, and preferences, then recommend options that truly fit.</p>
-            <p>With 10+ years of experience and a 98% visa success rate, we've helped over 1000+ students build successful international careers. Beyond education, we offer premium travel, forex, car rental, and insurance services under one roof.</p>
+            <p>With 10+ years of experience and a 98% visa success rate, we've helped over 1000+ students build successful international careers. Beyond education, we offer premium travel, finance, and insurance services under one roof.</p>
             <div className="about-features">
               <div className="feature-item">✅ End-to-End Support</div>
               <div className="feature-item">✅ Expert Counsellors</div>
