@@ -1,0 +1,321 @@
+/* ========== SHARED SERVICE PAGE STYLES ========== */
+
+/* Page Hero */
+.page-hero {
+  background-size: cover;
+  background-position: center;
+  padding: 7rem 0 5rem;
+  color: white;
+  text-align: left;
+}
+
+.page-hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0.75rem 0 1rem;
+  max-width: 700px;
+}
+
+.page-hero > .container > p {
+  color: rgba(255,255,255,0.8);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.hero-badges {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-badges span {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  backdrop-filter: blur(5px);
+  color: white;
+}
+
+/* ========== SERVICE CARDS GRID ========== */
+.service-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.svc-card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border-bottom: 3px solid transparent;
+}
+
+.svc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-bottom-color: #2563eb;
+}
+
+.svc-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.svc-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.svc-card p {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  line-height: 1.7;
+}
+
+/* ========== BG GRAY ========== */
+.bg-gray { background: var(--gray-50); }
+
+/* ========== COUNTRY DETAIL CARDS ========== */
+.country-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.country-detail-card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.country-detail-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.cdc-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.big-flag { font-size: 2.5rem; }
+
+.cdc-header h3 { font-size: 1.4rem; }
+
+.cdc-desc {
+  color: var(--gray-600);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.cdc-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.cdc-unis {
+  font-size: 0.9rem;
+}
+
+.cdc-unis ul {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cdc-unis li { color: var(--gray-600); }
+
+/* ========== PROCESS SECTION ========== */
+.bg-dark-process {
+  background: var(--primary-dark);
+  padding: 5rem 0;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.process-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  color: white;
+  transition: var(--transition);
+}
+
+.process-card:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-4px);
+}
+
+.process-step {
+  font-size: 2.5rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  color: #60a5fa;
+  margin-bottom: 0.75rem;
+}
+
+.process-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.process-card p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+}
+
+/* ========== ENQUIRY SECTION ========== */
+.enquiry-section { background: var(--gray-50); }
+
+.enquiry-inner {
+  display: flex;
+  gap: 5rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.enquiry-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.enquiry-text h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin: 0.75rem 0 1rem;
+}
+
+.enquiry-text p {
+  color: var(--gray-600);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.contact-callout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-callout a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1d4ed8;
+  transition: var(--transition);
+}
+
+.contact-callout a:hover { color: var(--primary-dark); }
+
+.enquiry-form {
+  background: white;
+  padding: 2.5rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  width: 420px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.enquiry-form h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.enquiry-form input,
+.enquiry-form select,
+.enquiry-form textarea {
+  padding: 0.85rem 1rem;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  transition: var(--transition);
+  outline: none;
+  width: 100%;
+}
+
+.enquiry-form input:focus,
+.enquiry-form select:focus,
+.enquiry-form textarea:focus {
+  border-color: #2563eb;
+}
+
+.form-status {
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 0.6rem;
+  border-radius: var(--radius-md);
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+/* ========== FOREX RATES STRIP ========== */
+.rates-strip {
+  background: white;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.rates-title {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+  color: var(--primary-dark);
+}
+
+.rates-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.rate-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  background: var(--gray-50);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-lg);
+  min-width: 120px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.rate-card:hover { background: #eff6ff; transform: translateY(-3px); }
+
+.rate-flag { font-size: 2rem; }
+.rate-code { font-weight: 800; font-size: 1.1rem; }
+.rate-name { font-size: 0.75rem; color: var(--gray-600); }
+.rate-note { font-size: 0.7rem; color: #2563eb; font-weight: 600; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .hero-container { flex-direction: column; }
+  .hero-form { width: 100%; }
+  .enquiry-form { width: 100%; }
+  .enquiry-inner { flex-direction: column; }
+  .about-strip-inner { flex-direction: column; }
+  .visa-inner { flex-direction: column; }
+}

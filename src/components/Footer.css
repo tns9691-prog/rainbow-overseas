@@ -1,0 +1,265 @@
+.footer {
+  background: var(--primary-dark);
+  color: var(--white);
+  padding: 4rem 0 0 0;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-logo {
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.footer-desc {
+  color: var(--gray-200);
+  margin-bottom: 1.5rem;
+}
+
+.owner-info {
+  background: var(--primary-light);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  border-left: 4px solid #ff0000;
+}
+
+.owner-info strong {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--white);
+}
+
+.owner-info span {
+  font-size: 0.9rem;
+  color: var(--gray-200);
+}
+
+.footer-col h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: var(--white);
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-col h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 2px;
+  background: var(--rainbow-gradient);
+}
+
+.footer-col ul li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-col ul li a {
+  color: var(--gray-200);
+  transition: var(--transition);
+}
+
+.footer-col ul li a:hover {
+  color: var(--white);
+  padding-left: 5px;
+}
+
+.contact-col ul li {
+  color: var(--gray-200);
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--primary-light);
+  border-radius: 50%;
+  color: var(--white);
+  transition: var(--transition);
+  font-weight: bold;
+}
+
+.social-link:hover {
+  background: var(--rainbow-gradient);
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1.5rem;
+  background: #0b1120;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--gray-200);
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+
+@media (max-width: 1024px) {
+  .footer-container {
+    gap: 2.5rem;
+  }
+  
+  .footer-logo {
+    font-size: 1.8rem;
+  }
+  
+  .footer-col h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 0 0 0;
+    margin-top: 3rem;
+  }
+  
+  .footer-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-logo {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .footer-desc {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .owner-info {
+    padding: 0.9rem;
+  }
+  
+  .owner-info strong {
+    font-size: 1rem;
+  }
+  
+  .owner-info span {
+    font-size: 0.85rem;
+  }
+  
+  .footer-col h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .footer-col h3::after {
+    width: 40px;
+    height: 1.5px;
+  }
+  
+  .footer-col ul li {
+    margin-bottom: 0.6rem;
+  }
+  
+  .footer-col ul li a {
+    font-size: 0.95rem;
+  }
+  
+  .contact-col ul li {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .social-icons {
+    gap: 0.75rem;
+  }
+  
+  .social-link {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+  
+  .footer-bottom {
+    padding: 1.2rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 2rem 0 0 0;
+    margin-top: 2rem;
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer-logo {
+    font-size: 1.3rem;
+  }
+  
+  .footer-col h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-col ul li a {
+    font-size: 0.9rem;
+  }
+  
+  .contact-col ul li {
+    font-size: 0.9rem;
+  }
+  
+  .social-link {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+  
+  .footer-bottom {
+    padding: 1rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    gap: 1.2rem;
+  }
+  
+  .footer-logo {
+    font-size: 1.2rem;
+  }
+  
+  .footer-desc {
+    font-size: 0.9rem;
+  }
+  
+  .footer-col h3 {
+    font-size: 0.95rem;
+  }
+  
+  .footer-col h3::after {
+    width: 30px;
+  }
+}
