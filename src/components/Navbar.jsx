@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Navbar.css';
+import logo from '../../public/logo.png';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,7 +20,8 @@ function Navbar() {
       {/* Main Nav */}
       <div className="container nav-container">
         <Link to="/" className="logo">
-          <span className="logo-rainbow">Rainbow</span><span className="logo-overseas"> Overseas</span>
+          <img src={logo} alt="Rainbow Overseas Logo" className="logo-img" />
+          <span className="logo-text">Rainbow Overseas</span>
         </Link>
 
         <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">

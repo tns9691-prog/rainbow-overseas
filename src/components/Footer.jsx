@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import './Footer.css';
+import logo from '../../public/logo.png';
 
 function Footer() {
   return (
@@ -7,6 +8,7 @@ function Footer() {
       <div className="container footer-container">
         <div className="footer-col brand-col">
           <Link to="/" className="footer-logo">
+            <img src={logo} alt="Rainbow Overseas Logo" className="footer-logo-img" />
             <span className="text-gradient">Rainbow</span> Overseas
           </Link>
           <p className="footer-desc">

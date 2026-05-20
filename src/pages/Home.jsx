@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import './Home.css';
+import logo from '../../public/logo.png';
 
 const countries = [
   { name: 'USA', flag: '🇺🇸', desc: 'A melting pot of cultures and truly international opportunities hub. Home to world-class Ivy League universities.' },
