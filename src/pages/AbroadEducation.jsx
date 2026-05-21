@@ -43,10 +43,10 @@ function AbroadEducation() {
           <h1>Study Abroad with <span className="text-gradient">Rainbow Overseas</span></h1>
           <p>End-to-end guidance from counselling to visa — we make your dream university a reality.</p>
           <div className="hero-badges">
-            <span>5000+ Students Placed</span>
+            <span>1000+ Students Placed</span>
             <span>98% Visa Success</span>
             <span>6+ Countries</span>
-            <span>15+ Years Experience</span>
+            <span>10+ Years Experience</span>
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@ import './ServicePage.css';
 import './About.css';
 
 const team = [
-  { name: 'T. Narsimha Swamy', role: 'Founder & CEO', desc: 'With 15+ years in international education and travel consulting, Mr. Swamy has guided over 5,000 students to their dream universities worldwide.' },
+  { name: 'T. Narsimha Swamy', role: 'Founder & CEO', desc: 'With 10+ years in international education and travel consulting, Mr. Swamy has guided over 1,000 students to their dream universities worldwide.' },
   { name: 'Senior Counsellors', role: 'Study Abroad Team', desc: 'Experienced counsellors specialising in country-specific admissions for USA, UK, Canada, Australia, Germany, and Ireland.' },
   { name: 'Visa Experts', role: 'Visa & Immigration', desc: 'Dedicated visa specialists with a 98% visa success rate across student, tourist, business, and dependent visa categories.' },
   { name: 'Travel Planners', role: 'Travel & Holidays', desc: 'Expert travel planners crafting personalised domestic and international holiday packages for every budget and preference.' },
@@ -12,9 +12,9 @@ const team = [
 const values = [
   { icon: '🎯', title: 'Student First', desc: 'Every decision we make is centred around the student\'s best interests — not commissions or quotas.' },
   { icon: '✅', title: 'Transparency', desc: 'No hidden charges, no false promises. We give you honest, realistic guidance at every step.' },
-  { icon: '🤝', title: 'Trust & Integrity', desc: 'Built on 15 years of trust. Our reputation is our biggest achievement and we protect it with every interaction.' },
+  { icon: '🤝', title: 'Trust & Integrity', desc: 'Built on 10 years of trust. Our reputation is our biggest achievement and we protect it with every interaction.' },
   { icon: '🌍', title: 'End-to-End Support', desc: 'From the first counselling session to post-arrival support — we are with you through the entire journey.' },
-  { icon: '📈', title: 'Proven Results', desc: '5,000+ students placed, 98% visa success, partnerships with 100+ universities worldwide.' },
+  { icon: '📈', title: 'Proven Results', desc: '1,000+ students placed, 98% visa success, partnerships with 100+ universities worldwide.' },
   { icon: '💡', title: 'Expert Guidance', desc: 'Our counsellors have first-hand knowledge of universities, courses, and visa processes across 6 countries.' },
 ];
 
@@ -24,7 +24,7 @@ const milestones = [
   { year: '2015', event: 'Launched Travel & Holidays division with customised packages' },
   { year: '2018', event: 'Added Forex Services & Insurance as premium offerings' },
   { year: '2021', event: 'Crossed 3,000 successful student placements abroad' },
-  { year: '2024', event: '5,000+ students placed — Named among Top 10 Consultants in Hyderabad' },
+  { year: '2024', event: '1,000+ students placed — Named among Top 10 Consultants in Hyderabad' },
 ];
 
 function About() {
@@ -36,7 +36,7 @@ function About() {
           <h1>Your Trusted Partner Since <span className="text-gradient">2009</span></h1>
           <p>Rainbow Overseas is Hyderabad's leading multi-service consultancy for Study Abroad, Visa, Travel, Forex, Car Rentals and Insurance — all under one roof.</p>
           <div className="hero-badges">
-            <span>15+ Years Experience</span><span>5000+ Students Placed</span><span>98% Visa Success</span>
+            <span>10+ Years Experience</span><span>1000+ Students Placed</span><span>98% Visa Success</span>
           </div>
         </div>
       </div>
@@ -53,10 +53,10 @@ function About() {
               <p style={{marginTop:'1rem'}}>Founded by <strong>T. Narsimha Swamy</strong> in 2009, Rainbow Overseas has grown from a small study abroad consultancy to a comprehensive international services platform trusted by thousands of families across Hyderabad and Telangana.</p>
             </div>
             <div className="mission-stats">
-              <div className="mstat"><span>5000+</span><p>Students Placed</p></div>
+              <div className="mstat"><span>1000+</span><p>Students Placed</p></div>
               <div className="mstat"><span>98%</span><p>Visa Success Rate</p></div>
               <div className="mstat"><span>100+</span><p>University Partners</p></div>
-              <div className="mstat"><span>15+</span><p>Years of Excellence</p></div>
+              <div className="mstat"><span>10+</span><p>Years of Excellence</p></div>
             </div>
           </div>
         </div>
@@ -83,7 +83,7 @@ function About() {
       <section className="section">
         <div className="container">
           <p className="section-tag center">OUR JOURNEY</p>
-          <h2 className="section-title">15 Years of Excellence</h2>
+          <h2 className="section-title">10 Years of Excellence</h2>
           <div className="timeline">
             {milestones.map((m, i) => (
               <div key={m.year} className={`timeline-item ${i % 2 === 0 ? 'left' : 'right'}`}>
@@ -120,7 +120,7 @@ function About() {
         <div className="container cta-inner">
           <div>
             <h2>Ready to Work With Us?</h2>
-            <p>Join 5,000+ students and families who have trusted Rainbow Overseas with their international dreams.</p>
+            <p>Join 1,000+ students and families who have trusted Rainbow Overseas with their international dreams.</p>
           </div>
           <div className="cta-actions">
             <a href="tel:+918555989544" className="btn btn-white">📞 8555989544</a>

@@ -146,7 +146,7 @@ function Home() {
           <div className="about-img-placeholder">
             <div className="about-img-box">
               <div className="about-img-content">
-                <div className="big-num">5000+</div>
+                <div className="big-num">1000+</div>
                 <div className="big-label">Students Placed Globally</div>
               </div>
             </div>
@@ -225,7 +225,7 @@ function Home() {
             <div className="visa-stat-box">
               <div className="visa-stat"><span>98%</span><p>Visa Success Rate</p></div>
               <div className="visa-stat"><span>10K+</span><p>Visas Processed</p></div>
-              <div className="visa-stat"><span>15+</span><p>Years Experience</p></div>
+              <div className="visa-stat"><span>10+</span><p>Years Experience</p></div>
               <div className="visa-stat"><span>6+</span><p>Countries Covered</p></div>
             </div>
           </div>

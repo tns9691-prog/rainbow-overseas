@@ -43,7 +43,7 @@ function VisaServices() {
           <h1>Hassle-Free Visa Assistance <span className="text-gradient">with 98% Success Rate</span></h1>
           <p>From student to tourist visas — our expert team handles everything so you can focus on your journey.</p>
           <div className="hero-badges">
-            <span>98% Visa Success</span><span>10,000+ Visas Processed</span><span>15+ Years Experience</span>
+            <span>98% Visa Success</span><span>10,000+ Visas Processed</span><span>10+ Years Experience</span>
           </div>
         </div>
       </div>
