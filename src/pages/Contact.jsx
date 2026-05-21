@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { FaFacebook, FaLinkedin, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import './ServicePage.css';
 import './Contact.css';
 
@@ -76,10 +77,10 @@ function Contact() {
               <div className="social-contact">
                 <p>Follow us on social media:</p>
                 <div className="social-row">
-                  <a href="#" className="social-btn">Facebook</a>
-                  <a href="#" className="social-btn">Instagram</a>
-                  <a href="#" className="social-btn">LinkedIn</a>
-                  <a href="https://wa.me/918555989544" target="_blank" rel="noreferrer" className="social-btn wa">WhatsApp</a>
+                  <a href="https://www.facebook.com/profile.php?id=100093534237102" target="_blank" rel="noopener noreferrer" className="social-btn"><FaFacebook /> Facebook</a>
+                  <a href="#" className="social-btn"><FaInstagram /> Instagram</a>
+                  <a href="https://www.linkedin.com/in/tnswamy/" target="_blank" rel="noopener noreferrer" className="social-btn"><FaLinkedin /> LinkedIn</a>
+                  <a href="https://wa.me/918555989544" target="_blank" rel="noreferrer" className="social-btn wa"><FaWhatsapp /> WhatsApp</a>
                 </div>
               </div>
 

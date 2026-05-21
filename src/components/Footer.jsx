@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { FaFacebook, FaLinkedin, FaInstagram, FaTwitter } from 'react-icons/fa';
 import './Footer.css';
 import logo from '../../public/logo.png';
 
@@ -45,11 +46,11 @@ function Footer() {
             <li><strong>✉️ Emails:</strong> bijjasrikar25@gmail.com</li>
             <li><strong>🏢 Address:</strong> Rainbow Overseas, Hyderabad, India</li>
           </ul>
-          <div className="social-icons">
-            <a href="#" className="social-link">FB</a>
-            <a href="#" className="social-link">IN</a>
-            <a href="#" className="social-link">IG</a>
-            <a href="#" className="social-link">TW</a>
+          <div className="social-icons"><FaFacebook /></a>
+            <a href="https://www.linkedin.com/in/tnswamy/" target="_blank" rel="noopener noreferrer" className="social-link" title="LinkedIn"><FaLinkedin /></a>
+            <a href="#" className="social-link" title="Instagram"><FaInstagram /></a>
+            <a href="#" className="social-link" title="Twitter"><FaTwitter />📷</a>
+            <a href="#" className="social-link" title="Twitter">𝕏</a>
           </div>
         </div>
       </div>

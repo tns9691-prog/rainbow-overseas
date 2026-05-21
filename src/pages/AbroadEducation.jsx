@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { FaUniversity, FaGlobe, FaUserGraduate, FaClipboardList, FaFileAlt, FaPassport, FaMoneyBillWave } from 'react-icons/fa';
 import './ServicePage.css';
 
 const countries = [
@@ -12,12 +13,12 @@ const countries = [
 ];
 
 const services = [
-  { icon: '🎯', title: 'Free Counselling', desc: 'Personalised one-on-one counselling sessions to identify your ideal course, country, and university based on your profile.' },
-  { icon: '📝', title: 'University Shortlisting', desc: 'Expert-backed shortlisting of universities matched to your academic profile, budget, and career goals.' },
-  { icon: '✍️', title: 'SOP & LOR Assistance', desc: 'Professional Statement of Purpose and Letter of Recommendation drafting by experienced writers.' },
-  { icon: '📄', title: 'Application Filing', desc: 'Complete assistance in filling and submitting university applications with 100% accuracy.' },
-  { icon: '💰', title: 'Scholarship Guidance', desc: 'Identify and apply for merit and country-specific scholarships to reduce your financial burden.' },
-  { icon: '🛂', title: 'Visa Assistance', desc: 'Complete student visa documentation, filing, and interview preparation with our 98% success rate.' },
+  { icon: <FaUserGraduate />, title: 'Free Counselling', desc: 'Personalised one-on-one counselling sessions to identify your ideal course, country, and university based on your profile.' },
+  { icon: <FaClipboardList />, title: 'University Shortlisting', desc: 'Expert-backed shortlisting of universities matched to your academic profile, budget, and career goals.' },
+  { icon: <FaFileAlt />, title: 'SOP & LOR Assistance', desc: 'Professional Statement of Purpose and Letter of Recommendation drafting by experienced writers.' },
+  { icon: <FaPassport />, title: 'Application Filing', desc: 'Complete assistance in filling and submitting university applications with 100% accuracy.' },
+  { icon: <FaMoneyBillWave />, title: 'Scholarship Guidance', desc: 'Identify and apply for merit and country-specific scholarships to reduce your financial burden.' },
+  { icon: <FaGlobe />, title: 'Visa Assistance', desc: 'Complete student visa documentation, filing, and interview preparation with our 98% success rate.' },
 ];
 
 function AbroadEducation() {
@@ -30,7 +31,7 @@ function AbroadEducation() {
     const serviceID = 'YOUR_SERVICE_ID';
     const templateID = 'YOUR_TEMPLATE_ID';
     const publicKey = 'YOUR_PUBLIC_KEY';
-    emailjs.send(serviceID, templateID, { ...form, to_email: 'bijjasrikar25@gmail.com', reply_to: 'midn531@gmail.com', service_requested: 'Study Abroad' }, publicKey)
+    emailjs.send(serviceID, templateID, { ...form, to_email: 'bijjasrikar25@gmail.com', reply_to: 'midn531@gmail.com', service_requested: 'Education Services' }, publicKey)
       .then(() => { setStatus('✅ Enquiry sent! We will contact you shortly.'); setTimeout(() => setStatus(''), 4000); })
       .catch(() => { setStatus('❌ Failed. Please call us.'); setTimeout(() => setStatus(''), 4000); });
   };
@@ -39,9 +40,9 @@ function AbroadEducation() {
     <div className="service-page">
       <div className="page-hero" style={{backgroundImage: "linear-gradient(rgba(10,15,35,0.82),rgba(10,15,35,0.88)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80')"}}>
         <div className="container">
-          <p className="section-tag" style={{color:'rgba(255,255,255,0.6)'}}>ABROAD EDUCATION</p>
-          <h1>Study Abroad with <span className="text-gradient">Rainbow Overseas</span></h1>
-          <p>End-to-end guidance from counselling to visa — we make your dream university a reality.</p>
+          <p className="section-tag" style={{color:'rgba(255,255,255,0.6)'}}>EDUCATION SERVICES</p>
+          <h1>Domestic & Abroad Education with <span className="text-gradient">Rainbow Overseas</span></h1>
+          <p>From local college admissions to global university applications, we deliver complete education support for domestic and overseas students.</p>
           <div className="hero-badges">
             <span>1000+ Students Placed</span>
             <span>98% Visa Success</span>
@@ -51,11 +52,30 @@ function AbroadEducation() {
         </div>
       </div>
 
+      <section className="section bg-gray">
+        <div className="container">
+          <p className="section-tag center">OUR EDUCATION OFFERING</p>
+          <h2 className="section-title">Domestic and Study Abroad Education</h2>
+          <div className="service-cards-grid">
+            <div className="svc-card">
+              <div className="svc-icon"><FaUniversity /></div>
+              <h4>Domestic Education</h4>
+              <p>Guidance for university and college admissions across India, entrance exam support, course selection, and scholarship assistance.</p>
+            </div>
+            <div className="svc-card">
+              <div className="svc-icon"><FaGlobe /></div>
+              <h4>Study Abroad</h4>
+              <p>End-to-end support for international admissions, applications, visas, travel planning, and post-arrival assistance.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Our Services */}
       <section className="section">
         <div className="container">
           <p className="section-tag center">WHAT WE OFFER</p>
-          <h2 className="section-title">Complete Study Abroad Support</h2>
+          <h2 className="section-title">Complete Education Support</h2>
           <div className="service-cards-grid">
             {services.map(s => (
               <div key={s.title} className="svc-card">
