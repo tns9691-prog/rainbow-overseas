@@ -19,12 +19,12 @@ const values = [
 ];
 
 const milestones = [
-  { year: '2009', event: 'Rainbow Overseas Founded in Hyderabad by T. Narsimha Swamy' },
-  { year: '2012', event: 'Expanded to full Visa Services — Tourist, Business & Student' },
-  { year: '2015', event: 'Launched Travel & Holidays division with customised packages' },
-  { year: '2018', event: 'Added Forex Services & Insurance as premium offerings' },
-  { year: '2021', event: 'Crossed 3,000 successful student placements abroad' },
-  { year: '2024', event: '1,000+ students placed — Named among Top 10 Consultants in Hyderabad' },
+  { year: '2016', event: 'Rainbow Overseas Founded in Hyderabad by T. Narsimha Swamy' },
+  { year: '2019', event: 'Expanded to full Visa Services — Tourist, Business & Student' },
+  { year: '2022', event: 'Launched Travel & Holidays division with customised packages' },
+  { year: '2025', event: 'Added Forex Services & Insurance as premium offerings' },
+  { year: '2026', event: 'Crossed 1,000+ successful student placements abroad' },
+  { year: '2026', event: '1,000+ students placed — Named among Top 10 Consultants in Hyderabad' },
 ];
 
 function About() {
@@ -33,7 +33,7 @@ function About() {
       <div className="page-hero" style={{backgroundImage:"linear-gradient(rgba(10,15,35,0.85),rgba(10,15,35,0.92)), url('https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=1920&q=80')"}}>
         <div className="container">
           <p className="section-tag" style={{color:'rgba(255,255,255,0.6)'}}>ABOUT US</p>
-          <h1>Your Trusted Partner Since <span className="text-gradient">2009</span></h1>
+          <h1>Your Trusted Partner Since <span className="text-gradient">2016</span></h1>
           <p>Rainbow Overseas is Hyderabad's leading multi-service consultancy for Study Abroad, Visa, Travel, Forex, Car Rentals and Insurance — all under one roof.</p>
           <div className="hero-badges">
             <span>10+ Years Experience</span><span>1000+ Students Placed</span><span>98% Visa Success</span>
@@ -50,7 +50,7 @@ function About() {
               <h2>Empowering Dreams, Enabling Global Journeys</h2>
               <p>At Rainbow Overseas, we believe that every student deserves access to world-class education, and every family deserves a seamless travel experience. Our mission is simple: provide honest, expert, and personalised guidance that makes international ambitions achievable.</p>
               <p style={{marginTop:'1rem'}}>We don't push popular destinations or one-size-fits-all packages. We take the time to understand your unique goals, academic background, and financial situation — then craft the perfect roadmap for you.</p>
-              <p style={{marginTop:'1rem'}}>Founded by <strong>T. Narsimha Swamy</strong> in 2009, Rainbow Overseas has grown from a small study abroad consultancy to a comprehensive international services platform trusted by thousands of families across Hyderabad and Telangana.</p>
+              <p style={{marginTop:'1rem'}}>Founded by <strong>T. Narsimha Swamy</strong> in 2016, Rainbow Overseas has grown from a small study abroad consultancy to a comprehensive international services platform trusted by thousands of families across Hyderabad and Telangana.</p>
             </div>
             <div className="mission-stats">
               <div className="mstat"><span>1000+</span><p>Students Placed</p></div>
