@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaUniversity, FaUserGraduate, FaClipboardList, FaFileAlt, FaMoneyBillWave } from 'react-icons/fa';
 import './ServicePage.css';
 
@@ -11,6 +11,68 @@ const services = [
 ];
 
 function DomesticEducation() {
+  const [form, setForm] = useState({
+    fullName: '',
+    mobileNumber: '',
+    state: '',
+    highestQualification: '',
+    courseLevel: '',
+    preferredCourse: '',
+    preferredUniversity: '',
+    preferredIntake: '',
+    startTime: '',
+    emiSupport: '',
+    counselingCall: '',
+    agreeToContact: false
+  });
+  const [status, setStatus] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!form.agreeToContact) {
+      alert("Please agree to be contacted for admission guidance.");
+      return;
+    }
+    setStatus('Sending...');
+
+    const googleFormURL = 'https://docs.google.com/forms/d/e/1FAIpQLSeLhjSSKdHsCrN6jl8Uelbu3aytswLSsfZAPaXqitBnW0EA-A/formResponse';
+    
+    const formData = new URLSearchParams();
+    formData.append('entry.1582330556', form.fullName);
+    formData.append('entry.1558877606', form.mobileNumber);
+    formData.append('entry.1225310896', form.state);
+    formData.append('entry.56543812', form.highestQualification);
+    formData.append('entry.971678475', form.courseLevel);
+    formData.append('entry.793595898', form.preferredCourse); // Mapping to Preferred Course
+    formData.append('entry.311491193', form.preferredUniversity);
+    formData.append('entry.1016125168', form.preferredIntake);
+    formData.append('entry.327126680', form.startTime);
+    formData.append('entry.2069343904', form.emiSupport);
+    formData.append('entry.930536495', form.counselingCall);
+    formData.append('entry.1604730003', 'I Agree'); // Checkbox
+
+    try {
+      await fetch(googleFormURL, {
+        method: 'POST',
+        mode: 'no-cors', // Crucial for submitting to Google Forms from client side
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: formData
+      });
+      setStatus('✅ Enquiry sent! We will contact you shortly.');
+      setTimeout(() => setStatus(''), 4000);
+      setForm({
+        fullName: '', mobileNumber: '', state: '', highestQualification: '',
+        courseLevel: '', preferredCourse: '', preferredUniversity: '',
+        preferredIntake: '', startTime: '', emiSupport: '', counselingCall: '',
+        agreeToContact: false
+      });
+    } catch (error) {
+      setStatus('❌ Failed. Please try again or call us.');
+      setTimeout(() => setStatus(''), 4000);
+    }
+  };
 
   return (
     <div className="service-page">
@@ -49,16 +111,79 @@ function DomesticEducation() {
           <div className="enquiry-inner">
             <div className="enquiry-text">
               <p className="section-tag">TALK TO AN EXPERT</p>
-              <h2>Get Free Counselling Today</h2>
+              <h2>Quick Application Form</h2>
               <p>Fill the form and our expert counsellors will reach out to you within 24 hours. No charges, no commitments.</p>
               <div className="contact-callout">
                 <a href="tel:+918555989544">📞 8555989544</a>
                 <a href="mailto:bijjasrikar25@gmail.com">✉️ bijjasrikar25@gmail.com</a>
               </div>
             </div>
-            <div className="enquiry-form-wrapper" style={{width: '100%', background: 'white', padding: '1rem', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.05)'}}>
-              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeLhjSSKdHsCrN6jl8Uelbu3aytswLSsfZAPaXqitBnW0EA-A/viewform?embedded=true" width="100%" height="800" frameBorder="0" marginHeight="0" marginWidth="0">Loading…</iframe>
-            </div>
+            <form className="enquiry-form detailed" onSubmit={handleSubmit}>
+              <h3 className="full-width" style={{marginBottom: '1rem'}}>Online Degree Admission</h3>
+              <div className="detailed-form-grid">
+                <input type="text" placeholder="Full Name *" required value={form.fullName} onChange={e => setForm({...form, fullName: e.target.value})} />
+                <input type="tel" placeholder="Mobile Number *" required value={form.mobileNumber} onChange={e => setForm({...form, mobileNumber: e.target.value})} />
+                
+                <select value={form.state} onChange={e => setForm({...form, state: e.target.value})}>
+                  <option value="">Select State</option>
+                  {['Andhra Pradesh', 'Telangana', 'Karnataka', 'Tamil Nadu', 'Maharashtra', 'Delhi', 'Other'].map(q => <option key={q} value={q}>{q}</option>)}
+                </select>
+
+                <select value={form.highestQualification} onChange={e => setForm({...form, highestQualification: e.target.value})}>
+                  <option value="">Highest Qualification</option>
+                  {['12th (Intermediate)', 'Diploma', 'Graduation', 'Post Graduation'].map(q => <option key={q} value={q}>{q}</option>)}
+                </select>
+
+                <select value={form.courseLevel} onChange={e => setForm({...form, courseLevel: e.target.value})}>
+                  <option value="">Interested Course Level</option>
+                  {['UG (Bachelor Degree)', 'PG (Master Degree)', 'Not Sure (Need Guidance)'].map(c => <option key={c} value={c}>{c}</option>)}
+                </select>
+
+                <select value={form.preferredCourse} onChange={e => setForm({...form, preferredCourse: e.target.value})}>
+                  <option value="">Preferred Course</option>
+                  {['BBA', 'BCA', 'B.Com', 'BA', 'MBA', 'MCA', 'M.Com', 'MA', 'Data Science', 'AI & ML', 'Digital Marketing', 'Not Sure'].map(c => <option key={c} value={c}>{c}</option>)}
+                </select>
+
+                <select className="full-width" value={form.preferredUniversity} onChange={e => setForm({...form, preferredUniversity: e.target.value})}>
+                  <option value="">Preferred University</option>
+                  {[
+                    'Amity University Online', 'Manipal University Jaipur Online (MUJ)', 'Jain University Online', 'Lovely Professional University (LPU Online)', 
+                    'Chandigarh University Online', 'Sikkim Manipal University (SMU Online)', 'DY Patil University Online', 'NMIMS Global Access (NMIMS Online)', 
+                    'Sharda University Online', 'SRM University Online', 'UPES Online', 'Vignan University Online', 'Andhra University Online', 'Christ University Online', 
+                    'Alliance University Online', 'Amrita University Online', 'Galgotias University Online', 'Parul University Online', 'Shoolini University Online', 
+                    'Not Sure – Suggest Me Best'
+                  ].map(c => <option key={c} value={c}>{c}</option>)}
+                </select>
+
+                <select value={form.preferredIntake} onChange={e => setForm({...form, preferredIntake: e.target.value})}>
+                  <option value="">Preferred Intake</option>
+                  {['January', 'April', 'July', 'October'].map(c => <option key={c} value={c}>{c}</option>)}
+                </select>
+
+                <select value={form.startTime} onChange={e => setForm({...form, startTime: e.target.value})}>
+                  <option value="">When do you want to start?</option>
+                  {['Immediately', 'Within 1 Month', 'Just Exploring'].map(c => <option key={c} value={c}>{c}</option>)}
+                </select>
+
+                <select value={form.emiSupport} onChange={e => setForm({...form, emiSupport: e.target.value})}>
+                  <option value="">Need EMI / Loan Support?</option>
+                  {['Yes', 'No'].map(c => <option key={c} value={c}>{c}</option>)}
+                </select>
+                
+                <select value={form.counselingCall} onChange={e => setForm({...form, counselingCall: e.target.value})}>
+                  <option value="">Do you want a free counseling call?</option>
+                  {['Yes', 'No'].map(c => <option key={c} value={c}>{c}</option>)}
+                </select>
+
+                <div className="full-width" style={{display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '0.5rem'}}>
+                  <input type="checkbox" id="agree" required checked={form.agreeToContact} onChange={e => setForm({...form, agreeToContact: e.target.checked})} style={{width: 'auto'}} />
+                  <label htmlFor="agree" style={{fontSize: '0.9rem', color: '#333'}}>I agree to be contacted for admission guidance</label>
+                </div>
+
+                <button type="submit" className="btn btn-dark full-width">Submit Application →</button>
+                {status && <p className="form-status full-width">{status}</p>}
+              </div>
+            </form>
           </div>
         </div>
       </section>
