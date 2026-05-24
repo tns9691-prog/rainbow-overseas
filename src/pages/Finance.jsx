@@ -86,15 +86,15 @@ function Finance() {
     setStatus('Sending...');
     emailjs
       .send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        'YOUR_EMAILJS_SERVICE_ID', // Replace with your actual EmailJS Service ID
+        'YOUR_EMAILJS_TEMPLATE_ID', // Replace with your actual EmailJS Template ID
         {
           ...form,
           to_email: 'bijjasrikar25@gmail.com',
           reply_to: 'midn531@gmail.com',
           service_requested: form.service || 'Finance Services',
         },
-        'YOUR_PUBLIC_KEY'
+        'YOUR_EMAILJS_PUBLIC_KEY' // Replace with your actual EmailJS Public Key
       )
       .then(() => {
         setStatus('✅ Enquiry sent! We will contact you shortly.');

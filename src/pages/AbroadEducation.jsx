@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { FcLibrary, FcGlobe, FcGraduationCap, FcTodoList, FcDocument, FcAddressBook, FcMoneyTransfer } from 'react-icons/fc';
+import {
+  FcGlobe,
+  FcGraduationCap,
+  FcApproval,
+  FcTodoList,
+  FcMoneyTransfer,
+  FcReadingEbook,
+  FcBriefcase,
+} from 'react-icons/fc';
 import './ServicePage.css';
 
 const countries = [
@@ -12,14 +20,52 @@ const countries = [
   { name: 'Ireland', flag: '🇮🇪', desc: 'Ireland is the fastest growing study destination, home to the European HQs of Google, Apple and Facebook. Students enjoy a 2-year Stay Back option and a safe, English-speaking environment.', intakes: 'Sep, Jan', avgCost: '₹15–22 Lakhs/yr', workVisa: 'Stay Back 2 Years', top: ['Trinity College Dublin', 'UCD', 'UCC', 'NUI Galway'] },
 ];
 
-const services = [
-  { icon: <FcGraduationCap />, title: 'Free Counselling', desc: 'Personalised one-on-one counselling sessions to identify your ideal course, country, and university based on your profile.' },
-  { icon: <FcTodoList />, title: 'University Shortlisting', desc: 'Expert-backed shortlisting of universities matched to your academic profile, budget, and career goals.' },
-  { icon: <FcDocument />, title: 'SOP & LOR Assistance', desc: 'Professional Statement of Purpose and Letter of Recommendation drafting by experienced writers.' },
-  { icon: <FcAddressBook />, title: 'Application Filing', desc: 'Complete assistance in filling and submitting university applications with 100% accuracy.' },
-  { icon: <FcMoneyTransfer />, title: 'Scholarship Guidance', desc: 'Identify and apply for merit and country-specific scholarships to reduce your financial burden.' },
-  { icon: <FcGlobe />, title: 'Visa Assistance', desc: 'Complete student visa documentation, filing, and interview preparation with our 98% success rate.' },
+const abroadServices = [
+  {
+    icon: <FcGlobe />,
+    title: 'Overseas Education',
+    sub: 'End-to-End Guidance',
+    desc: 'Complete support for studying abroad — from shortlisting universities to post-arrival assistance across 6+ countries.',
+  },
+  {
+    icon: <FcApproval />,
+    title: 'Student Visa',
+    sub: '98% Success Rate',
+    desc: 'Full student visa documentation, form filing, SOP review, and interview preparation with our expert visa counsellors.',
+  },
+  {
+    icon: <FcTodoList />,
+    title: 'University Admissions',
+    sub: 'Best-Fit Universities',
+    desc: 'Expert shortlisting and end-to-end application filing at top universities matching your profile, budget, and career goals.',
+  },
+  {
+    icon: <FcMoneyTransfer />,
+    title: 'Scholarship Guidance',
+    sub: 'Merit & Country-Specific',
+    desc: 'Identify, apply, and win merit scholarships, government grants, and country-specific funding to reduce your study costs.',
+  },
+  {
+    icon: <FcBriefcase />,
+    title: 'Education Loan',
+    sub: 'Collateral & Non-Collateral',
+    desc: 'Guidance and assistance for secured and unsecured education loans through our banking partners at competitive rates.',
+  },
+  {
+    icon: <FcReadingEbook />,
+    title: 'Course Counseling',
+    sub: 'Right Course, Right Career',
+    desc: 'In-depth counselling sessions to help you choose the right course and specialisation based on your interests and market demand.',
+  },
+  {
+    icon: <FcGraduationCap />,
+    title: 'Career Guidance',
+    sub: 'Post-Study Planning',
+    desc: 'Strategic career planning including work visa pathways, PR options, job search support, and post-study opportunities abroad.',
+  },
 ];
+
+
 
 function AbroadEducation() {
   const [form, setForm] = useState({
@@ -34,9 +80,9 @@ function AbroadEducation() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setStatus('Sending...');
-    const serviceID = 'YOUR_SERVICE_ID';
-    const templateID = 'YOUR_TEMPLATE_ID';
-    const publicKey = 'YOUR_PUBLIC_KEY';
+    const serviceID = 'YOUR_EMAILJS_SERVICE_ID'; // Replace with your actual EmailJS Service ID
+    const templateID = 'YOUR_EMAILJS_TEMPLATE_ID'; // Replace with your actual EmailJS Template ID
+    const publicKey = 'YOUR_EMAILJS_PUBLIC_KEY'; // Replace with your actual EmailJS Public Key
     emailjs.send(serviceID, templateID, { ...form, to_email: 'bijjasrikar25@gmail.com', reply_to: 'midn531@gmail.com', service_requested: 'Education Services' }, publicKey)
       .then(() => { setStatus('✅ Enquiry sent! We will contact you shortly.'); setTimeout(() => setStatus(''), 4000); })
       .catch(() => { setStatus('❌ Failed. Please call us.'); setTimeout(() => setStatus(''), 4000); });
@@ -58,31 +104,20 @@ function AbroadEducation() {
         </div>
       </div>
 
+      {/* Services Grid */}
       <section className="section bg-gray">
         <div className="container">
-          <p className="section-tag center">OUR EDUCATION OFFERING</p>
-          <h2 className="section-title">Study Abroad Services</h2>
-          <div className="service-cards-grid">
-            <div className="svc-card">
-              <div className="svc-icon"><FcGlobe /></div>
-              <h4>Study Abroad</h4>
-              <p>End-to-end support for international admissions, applications, visas, travel planning, and post-arrival assistance.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Services */}
-      <section className="section">
-        <div className="container">
           <p className="section-tag center">WHAT WE OFFER</p>
-          <h2 className="section-title">Complete Education Support</h2>
-          <div className="service-cards-grid">
-            {services.map(s => (
-              <div key={s.title} className="svc-card">
-                <div className="svc-icon">{s.icon}</div>
-                <h4>{s.title}</h4>
-                <p>{s.desc}</p>
+          <h2 className="section-title">Our Abroad Education Services</h2>
+          <div className="finance-services-grid">
+            {abroadServices.map(s => (
+              <div key={s.title} className="finance-svc-card">
+                <div className="finance-svc-icon">{s.icon}</div>
+                <div className="finance-svc-body">
+                  <h4>{s.title}</h4>
+                  <span className="finance-svc-sub">{s.sub}</span>
+                  <p>{s.desc}</p>
+                </div>
               </div>
             ))}
           </div>

@@ -18,10 +18,15 @@ function Insurance() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setStatus('Sending...');
-    const serviceID = 'YOUR_SERVICE_ID';
-    const templateID = 'YOUR_TEMPLATE_ID';
-    const publicKey = 'YOUR_PUBLIC_KEY';
-    emailjs.send(serviceID, templateID, { ...form, to_email: 'bijjasrikar25@gmail.com', reply_to: 'midn531@gmail.com', service_requested: 'Insurance' }, publicKey)
+    const serviceID = 'YOUR_EMAILJS_SERVICE_ID'; // Replace with your actual EmailJS Service ID
+    const templateID = 'YOUR_EMAILJS_TEMPLATE_ID'; // Replace with your actual EmailJS Template ID
+    const publicKey = 'YOUR_EMAILJS_PUBLIC_KEY'; // Replace with your actual EmailJS Public Key
+    emailjs.send(
+      serviceID,
+      templateID,
+      { ...form, to_email: 'bijjasrikar25@gmail.com', reply_to: 'midn531@gmail.com', service_requested: 'Insurance' },
+      publicKey
+    )
       .then(() => { setStatus('✅ Enquiry sent!'); setTimeout(() => setStatus(''), 4000); })
       .catch(() => { setStatus('❌ Failed. Please call us.'); setTimeout(() => setStatus(''), 4000); });
   };
