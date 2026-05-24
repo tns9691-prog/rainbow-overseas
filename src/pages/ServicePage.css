@@ -331,6 +331,108 @@
 .rate-name { font-size: 0.75rem; color: var(--gray-600); }
 .rate-note { font-size: 0.7rem; color: #2563eb; font-weight: 600; }
 
+/* ========== FINANCE / TRAVEL SERVICE CARDS ========== */
+.finance-services-grid,
+.travel-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.finance-svc-card,
+.travel-svc-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid transparent;
+  transition: var(--transition);
+}
+
+.finance-svc-card:hover,
+.travel-svc-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-left-color: #2563eb;
+}
+
+.finance-svc-icon,
+.travel-svc-icon {
+  font-size: 2.6rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.finance-svc-body h4,
+.travel-svc-body h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+  color: var(--primary-dark);
+}
+
+.finance-svc-sub,
+.travel-svc-sub {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #2563eb;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.finance-svc-body p,
+.travel-svc-body p {
+  font-size: 0.88rem;
+  color: var(--gray-600);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ========== WHY US GRID ========== */
+.why-travel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.why-travel-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.why-travel-card:hover {
+  background: rgba(255,255,255,0.13);
+  transform: translateY(-4px);
+}
+
+.why-emoji {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.why-travel-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.4rem;
+}
+
+.why-travel-card p {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+}
+
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
   .hero-container { flex-direction: column; }
@@ -339,4 +441,5 @@
   .enquiry-inner { flex-direction: column; }
   .about-strip-inner { flex-direction: column; }
   .visa-inner { flex-direction: column; }
+  .finance-svc-card, .travel-svc-card { flex-direction: column; gap: 0.75rem; }
 }
