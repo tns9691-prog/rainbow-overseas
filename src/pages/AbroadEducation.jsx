@@ -46,9 +46,9 @@ function AbroadEducation() {
     <div className="service-page">
       <div className="page-hero" style={{backgroundImage: "linear-gradient(rgba(10,15,35,0.82),rgba(10,15,35,0.88)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80')"}}>
         <div className="container">
-          <p className="section-tag" style={{color:'rgba(255,255,255,0.6)'}}>EDUCATION SERVICES</p>
-          <h1>Domestic & Abroad Education with <span className="text-gradient">Rainbow Overseas</span></h1>
-          <p>From local college admissions to global university applications, we deliver complete education support for domestic and overseas students.</p>
+          <p className="section-tag" style={{color:'rgba(255,255,255,0.6)'}}>ABROAD EDUCATION SERVICES</p>
+          <h1>Study Abroad with <span className="text-gradient">Rainbow Overseas</span></h1>
+          <p>Complete support for international university admissions, ensuring your global aspirations become a reality.</p>
           <div className="hero-badges">
             <span>1000+ Students Placed</span>
             <span>98% Visa Success</span>
@@ -61,13 +61,8 @@ function AbroadEducation() {
       <section className="section bg-gray">
         <div className="container">
           <p className="section-tag center">OUR EDUCATION OFFERING</p>
-          <h2 className="section-title">Domestic and Study Abroad Education</h2>
+          <h2 className="section-title">Study Abroad Services</h2>
           <div className="service-cards-grid">
-            <div className="svc-card">
-              <div className="svc-icon"><FaUniversity /></div>
-              <h4>Domestic Education</h4>
-              <p>Guidance for university and college admissions across India, entrance exam support, course selection, and scholarship assistance.</p>
-            </div>
             <div className="svc-card">
               <div className="svc-icon"><FaGlobe /></div>
               <h4>Study Abroad</h4>

@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import AbroadEducation from './pages/AbroadEducation';
+import DomesticEducation from './pages/DomesticEducation';
 import Finance from './pages/Finance';
 import TravelHolidays from './pages/TravelHolidays';
 import Insurance from './pages/Insurance';
@@ -17,6 +18,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="abroad-education" element={<AbroadEducation />} />
+          <Route path="domestic-education" element={<DomesticEducation />} />
           <Route path="finance" element={<Finance />} />
           <Route path="travel-holidays" element={<TravelHolidays />} />
           <Route path="insurance" element={<Insurance />} />

@@ -32,7 +32,13 @@ function Navbar() {
           <ul>
             <li><NavLink to="/" end onClick={() => setMenuOpen(false)}>Home</NavLink></li>
             <li><NavLink to="/about" onClick={() => setMenuOpen(false)}>About Us</NavLink></li>
-            <li><NavLink to="/abroad-education" onClick={() => setMenuOpen(false)}>Education</NavLink></li>
+            <li className="dropdown">
+              <span className="dropdown-title">Education ▾</span>
+              <ul className="dropdown-menu">
+                <li><NavLink to="/domestic-education" onClick={() => setMenuOpen(false)}>Domestic Education</NavLink></li>
+                <li><NavLink to="/abroad-education" onClick={() => setMenuOpen(false)}>Abroad Education</NavLink></li>
+              </ul>
+            </li>
             <li><NavLink to="/travel-holidays" onClick={() => setMenuOpen(false)}>Travel</NavLink></li>
             <li><NavLink to="/finance" onClick={() => setMenuOpen(false)}>Finance</NavLink></li>
             <li><NavLink to="/insurance" onClick={() => setMenuOpen(false)}>Insurance</NavLink></li>
