@@ -144,9 +144,11 @@ function AbroadEducation() {
                 </select>
                 <input type="number" placeholder="Any Backlogs? (0 if none)" value={form.backlogs} onChange={e => setForm({...form, backlogs: e.target.value})} />
 
-                <select value={form.country} onChange={e => setForm({...form, country: e.target.value})}>
+                <select value={form.country} onChange={e => setForm({ ...form, country: e.target.value })}>
                   <option value="">Preferred Country *</option>
-                  {['USA','UK','Canada','Australia','Germany','Ireland','New Zealand','Other'].map(c => <option key={c} value={c}>{c}</option>)}
+                  {countries.map(c => (
+                    <option key={c.name} value={c.name}>{c.flag} {c.name}</option>
+                  ))}
                 </select>
                 <select value={form.course} onChange={e => setForm({...form, course: e.target.value})}>
                   <option value="">Course Interested *</option>
