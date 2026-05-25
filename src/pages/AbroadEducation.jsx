@@ -12,12 +12,12 @@ import {
 import './ServicePage.css';
 
 const countries = [
-  { name: 'USA', flag: '🇺🇸', desc: 'Home to world-renowned universities like Harvard, MIT, and Stanford. The US offers a vibrant campus life, cutting-edge research, and unmatched career prospects. Over 4,000 accredited institutions await you.', intakes: 'Jan, Aug/Sep', avgCost: '₹25–40 Lakhs/yr', workVisa: 'OPT/H1B', top: ['Harvard University', 'MIT', 'Stanford University', 'University of California'] },
-  { name: 'UK', flag: '🇬🇧', desc: 'Home to Oxford, Cambridge, and Imperial College. UK degrees are globally respected and most programmes are 1-year for postgraduates, saving time and money. A 2-year post-study work visa awaits graduates.', intakes: 'Sep, Jan', avgCost: '₹20–35 Lakhs/yr', workVisa: 'PSW 2 Years', top: ['University of Oxford', 'Imperial College London', 'University of Edinburgh'] },
-  { name: 'Canada', flag: '🇨🇦', desc: 'Canada is the most preferred destination for Indian students thanks to its PGWP and PR-friendly immigration pathways. Multicultural, safe, and affordable with excellent quality of education.', intakes: 'Jan, Sep', avgCost: '₹15–25 Lakhs/yr', workVisa: 'PGWP 3 Years', top: ['University of Toronto', 'UBC', 'McGill University', 'University of Waterloo'] },
-  { name: 'Australia', flag: '🇦🇺', desc: 'Top-ranked universities, post-study work visas of up to 6 years, and a high quality of life make Australia a top choice. The 8 Group of Eight universities are world-class institutions.', intakes: 'Feb, Jul', avgCost: '₹20–35 Lakhs/yr', workVisa: 'GTE up to 6 Years', top: ['University of Melbourne', 'ANU', 'University of Sydney', 'UNSW'] },
-  { name: 'Germany', flag: '🇩🇪', desc: 'Germany offers tuition-free or very low-cost education at public universities. Known for engineering, technology and research excellence, Germany is the land of innovation and great careers.', intakes: 'Apr/May, Oct', avgCost: '₹3–8 Lakhs/yr', workVisa: 'Job Seeker Visa', top: ['Technical University of Munich', 'LMU Munich', 'Heidelberg University'] },
-  { name: 'Ireland', flag: '🇮🇪', desc: 'Ireland is the fastest growing study destination, home to the European HQs of Google, Apple and Facebook. Students enjoy a 2-year Stay Back option and a safe, English-speaking environment.', intakes: 'Sep, Jan', avgCost: '₹15–22 Lakhs/yr', workVisa: 'Stay Back 2 Years', top: ['Trinity College Dublin', 'UCD', 'UCC', 'NUI Galway'] },
+  { name: 'USA', flag: '/images/flags/usa.png', desc: 'Home to world-renowned universities like Harvard, MIT, and Stanford. The US offers a vibrant campus life, cutting-edge research, and unmatched career prospects. Over 4,000 accredited institutions await you.', intakes: 'Jan, Aug/Sep', avgCost: '₹25–40 Lakhs/yr', workVisa: 'OPT/H1B', top: ['Harvard University', 'MIT', 'Stanford University', 'University of California'] },
+  { name: 'UK', flag: '/images/flags/uk.png', desc: 'Home to Oxford, Cambridge, and Imperial College. UK degrees are globally respected and most programmes are 1-year for postgraduates, saving time and money. A 2-year post-study work visa awaits graduates.', intakes: 'Sep, Jan', avgCost: '₹20–35 Lakhs/yr', workVisa: 'PSW 2 Years', top: ['University of Oxford', 'Imperial College London', 'University of Edinburgh'] },
+  { name: 'Canada', flag: '/images/flags/canada.png', desc: 'Canada is the most preferred destination for Indian students thanks to its PGWP and PR-friendly immigration pathways. Multicultural, safe, and affordable with excellent quality of education.', intakes: 'Jan, Sep', avgCost: '₹15–25 Lakhs/yr', workVisa: 'PGWP 3 Years', top: ['University of Toronto', 'UBC', 'McGill University', 'University of Waterloo'] },
+  { name: 'Australia', flag: '/images/flags/australia.png', desc: 'Top-ranked universities, post-study work visas of up to 6 years, and a high quality of life make Australia a top choice. The 8 Group of Eight universities are world-class institutions.', intakes: 'Feb, Jul', avgCost: '₹20–35 Lakhs/yr', workVisa: 'GTE up to 6 Years', top: ['University of Melbourne', 'ANU', 'University of Sydney', 'UNSW'] },
+  { name: 'Germany', flag: '/images/flags/germany.png', desc: 'Germany offers tuition-free or very low-cost education at public universities. Known for engineering, technology and research excellence, Germany is the land of innovation and great careers.', intakes: 'Apr/May, Oct', avgCost: '₹3–8 Lakhs/yr', workVisa: 'Job Seeker Visa', top: ['Technical University of Munich', 'LMU Munich', 'Heidelberg University'] },
+  { name: 'Ireland', flag: '/images/flags/ireland.png', desc: 'Ireland is the fastest growing study destination, home to the European HQs of Google, Apple and Facebook. Students enjoy a 2-year Stay Back option and a safe, English-speaking environment.', intakes: 'Sep, Jan', avgCost: '₹15–22 Lakhs/yr', workVisa: 'Stay Back 2 Years', top: ['Trinity College Dublin', 'UCD', 'UCC', 'NUI Galway'] },
 ];
 
 const abroadServices = [
@@ -133,7 +133,7 @@ function AbroadEducation() {
             {countries.map(c => (
               <div key={c.name} className="country-detail-card">
                 <div className="cdc-header">
-                  <span className="big-flag">{c.flag}</span>
+                  <span className="big-flag"><img src={c.flag} alt={`${c.name} flag`} /></span>
                   <h3>Study in {c.name}</h3>
                 </div>
                 <p className="cdc-desc">{c.desc}</p>
@@ -182,7 +182,7 @@ function AbroadEducation() {
                 <select value={form.country} onChange={e => setForm({ ...form, country: e.target.value })}>
                   <option value="">Preferred Country *</option>
                   {countries.map(c => (
-                    <option key={c.name} value={c.name}>{c.flag} {c.name}</option>
+                    <option key={c.name} value={c.name}>{c.name}</option>
                   ))}
                 </select>
                 <select value={form.course} onChange={e => setForm({...form, course: e.target.value})}>

@@ -106,7 +106,8 @@
   margin-bottom: 1rem;
 }
 
-.big-flag { font-size: 2.5rem; }
+.big-flag { font-size: 2.5rem; display: flex; align-items: center; }
+.big-flag img { width: 40px; height: auto; object-fit: contain; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
 
 .cdc-header h3 { font-size: 1.4rem; }
 
