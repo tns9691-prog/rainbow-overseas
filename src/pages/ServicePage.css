@@ -100,17 +100,16 @@
 .country-detail-card::before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  height: 90%;
+  bottom: -10%;
+  right: -10%;
+  width: 200px;
+  height: 200px;
   background-image: var(--flag-url);
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom right;
   opacity: 0.1;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
   transition: var(--transition);
 }
