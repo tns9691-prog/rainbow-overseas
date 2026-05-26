@@ -108,14 +108,14 @@
   background-image: var(--flag-url);
   background-size: cover;
   background-position: center;
-  opacity: 0.04;
+  opacity: 0.1;
   z-index: -1;
   pointer-events: none;
   transition: var(--transition);
 }
 
 .country-detail-card:hover::before {
-  opacity: 0.08;
+  opacity: 0.2;
 }
 
 .country-detail-card:hover {
