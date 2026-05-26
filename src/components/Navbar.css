@@ -8,9 +8,51 @@
 
 .top-bar-inner {
   display: flex;
-  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
+
+.top-bar-left a, .top-bar-left span {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 0.82rem;
+  transition: color 0.2s;
+}
+
+.top-bar-left a:hover { color: white; }
+
+.top-bar-social {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.top-bar-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  color: white;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.top-bar-social a:hover { background: rgba(255,255,255,0.28); transform: translateY(-2px); }
+.top-bar-social a[aria-label="Facebook"]:hover  { background: #1877f2; }
+.top-bar-social a[aria-label="Instagram"]:hover { background: #e1306c; }
+.top-bar-social a[aria-label="YouTube"]:hover   { background: #ff0000; }
+.top-bar-social a[aria-label="WhatsApp"]:hover  { background: #25d366; }
 
 /* ===== MAIN NAV ===== */
 .navbar {
