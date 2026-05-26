@@ -44,7 +44,7 @@ function Footer() {
           <ul>
             <li><strong>📞 Phones:</strong> 8555989544</li>
             <li><strong>✉️ Emails:</strong> bijjasrikar25@gmail.com</li>
-            <li><strong>🏢 Address:</strong> Rainbow Overseas, Hyderabad, India</li>
+            <li><strong>🏢 Address:</strong> F-1110, Rainbow Vistas Rock Garden, Green Hills Road, Kukatpally, Hyderabad, 500018</li>
           </ul>
           <div className="social-icons">
             <a href="https://www.facebook.com/profile.php?id=100093534237102" target="_blank" rel="noopener noreferrer" className="social-link" title="Facebook"><FaFacebook /></a>

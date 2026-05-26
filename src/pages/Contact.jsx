@@ -62,7 +62,7 @@ function Contact() {
                   <div className="info-icon">🏢</div>
                   <div>
                     <strong>Visit Our Office</strong>
-                    <span>Rainbow Overseas, Hyderabad, Telangana, India</span>
+                    <span>F-1110, Rainbow Vistas Rock Garden, Green Hills Road, Kukatpally, Hyderabad, 500018</span>
                   </div>
                 </div>
                 <div className="info-card">
