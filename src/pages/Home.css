@@ -408,7 +408,7 @@
 .bg-dark-section .section-title { color: white; }
 
 /* ========== COURSES ========== */
-.courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
+.courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
 .course-card {
   display: flex;
   align-items: center;
@@ -423,8 +423,7 @@
   transition: var(--transition);
   cursor: pointer;
   overflow: hidden;
-  word-break: break-word;
-  hyphens: auto;
+  white-space: nowrap;
 }
 .course-card:hover { background: rgba(255,255,255,0.15); transform: scale(1.03); }
 .course-icon { font-size: 1.4rem; }
@@ -801,7 +800,7 @@
 /* Courses Grid Mobile */
 @media (max-width: 768px) {
   .courses-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 0.75rem;
   }
   
@@ -817,7 +816,7 @@
 
 @media (max-width: 600px) {
   .courses-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 0.5rem;
   }
   
