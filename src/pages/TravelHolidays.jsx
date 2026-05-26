@@ -173,6 +173,22 @@ function TravelHolidays() {
         </div>
       </section>
 
+      {/* Travel Gallery */}
+      <section className="section bg-white">
+        <div className="container">
+          <p className="section-tag center">WANDERLUST</p>
+          <h2 className="section-title">Explore Beautiful Destinations</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
+            <div style={{ borderRadius: '15px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+              <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80" alt="Airplane flight" style={{ width: '100%', height: '350px', objectFit: 'cover', display: 'block' }} />
+            </div>
+            <div style={{ borderRadius: '15px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+              <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=80" alt="Beautiful landscape" style={{ width: '100%', height: '350px', objectFit: 'cover', display: 'block' }} />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="section bg-dark-section">
         <div className="container">

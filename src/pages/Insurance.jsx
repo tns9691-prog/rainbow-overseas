@@ -58,6 +58,22 @@ function Insurance() {
         </div>
       </section>
 
+      {/* Insurance Gallery */}
+      <section className="section bg-white">
+        <div className="container">
+          <p className="section-tag center">PROTECTION FIRST</p>
+          <h2 className="section-title">Peace of Mind</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
+            <div style={{ borderRadius: '15px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+              <img src="https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?auto=format&fit=crop&w=800&q=80" alt="Family protection" style={{ width: '100%', height: '350px', objectFit: 'cover', display: 'block' }} />
+            </div>
+            <div style={{ borderRadius: '15px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+              <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80" alt="Health and wellness" style={{ width: '100%', height: '350px', objectFit: 'cover', display: 'block' }} />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section enquiry-section">
         <div className="container">
           <div className="enquiry-inner">

@@ -159,6 +159,22 @@ function Finance() {
         </div>
       </section>
 
+      {/* Finance Gallery */}
+      <section className="section bg-white">
+        <div className="container">
+          <p className="section-tag center">SECURE YOUR FUTURE</p>
+          <h2 className="section-title">Financial Freedom</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
+            <div style={{ borderRadius: '15px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+              <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Finance calculations" style={{ width: '100%', height: '350px', objectFit: 'cover', display: 'block' }} />
+            </div>
+            <div style={{ borderRadius: '15px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+              <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=800&q=80" alt="Business consultation" style={{ width: '100%', height: '350px', objectFit: 'cover', display: 'block' }} />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Us Strip */}
       <section className="section bg-dark-section">
         <div className="container">

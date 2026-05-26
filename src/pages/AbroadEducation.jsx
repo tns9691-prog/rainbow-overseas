@@ -124,6 +124,22 @@ function AbroadEducation() {
         </div>
       </section>
 
+      {/* Student Gallery */}
+      <section className="section bg-white">
+        <div className="container">
+          <p className="section-tag center">STUDENT LIFE</p>
+          <h2 className="section-title">Experience Global Education</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
+            <div style={{ borderRadius: '15px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+              <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80" alt="Male student studying abroad" style={{ width: '100%', height: '350px', objectFit: 'cover', display: 'block' }} />
+            </div>
+            <div style={{ borderRadius: '15px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Female student studying abroad" style={{ width: '100%', height: '350px', objectFit: 'cover', display: 'block' }} />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Countries */}
       <section className="section bg-gray">
         <div className="container">
