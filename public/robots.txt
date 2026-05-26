@@ -1,4 +1,10 @@
+# Allow all search engine crawlers
 User-agent: *
 Allow: /
 
+# Disallow any admin or private paths (none currently, but good practice)
+Disallow: /api/
+Disallow: /*.json$
+
+# Sitemap location
 Sitemap: https://rainbowoverseas.in/sitemap.xml
