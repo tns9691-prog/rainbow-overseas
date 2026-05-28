@@ -4,12 +4,12 @@ import './Home.css';
 import logo from '../../public/logo.webp';
 
 const countries = [
-  { name: 'United States of America', shortName: 'USA', flag: '/images/flags/usa.png', landmark: '/images/landmarks/usa.png', desc: 'Home to world-renowned universities. Offers a vibrant campus life and unmatched career prospects.', intakes: 'Jan, Aug/Sep', avgCost: '₹25–40 Lakhs/yr', workVisa: 'OPT/H1B' },
-  { name: 'United Kingdom', shortName: 'UK', flag: '/images/flags/uk.png', landmark: '/images/landmarks/uk.png', desc: 'UK degrees are globally respected with mostly 1-year master programmes, saving time and money.', intakes: 'Sep, Jan', avgCost: '₹20–35 Lakhs/yr', workVisa: 'PSW 2 Years' },
-  { name: 'Canada', shortName: 'Canada', flag: '/images/flags/canada.png', landmark: '/images/landmarks/canada.png', desc: 'Most preferred destination thanks to its PGWP and PR-friendly immigration pathways.', intakes: 'Jan, Sep', avgCost: '₹15–25 Lakhs/yr', workVisa: 'PGWP 3 Years' },
-  { name: 'Australia', shortName: 'Australia', flag: '/images/flags/australia.png', landmark: '/images/landmarks/australia.png', desc: 'Top-ranked universities, post-study work visas of up to 6 years, and high quality of life.', intakes: 'Feb, Jul', avgCost: '₹20–35 Lakhs/yr', workVisa: 'GTE up to 6 Years' },
-  { name: 'Germany', shortName: 'Germany', flag: '/images/flags/germany.png', landmark: '/images/landmarks/germany.png', desc: 'Offers tuition-free or very low-cost education at public universities. Land of innovation.', intakes: 'Apr/May, Oct', avgCost: '₹3–8 Lakhs/yr', workVisa: 'Job Seeker Visa' },
-  { name: 'Ireland', shortName: 'Ireland', flag: '/images/flags/ireland.png', landmark: '/images/landmarks/ireland.png', desc: 'Fastest growing study destination, home to European HQs of Google, Apple and Facebook.', intakes: 'Sep, Jan', avgCost: '₹15–22 Lakhs/yr', workVisa: 'Stay Back 2 Years' },
+  { name: 'United States of America', shortName: 'USA', flag: '/images/flags/usa.svg', landmark: '/images/landmarks/usa.png', desc: 'Home to world-renowned universities. Offers a vibrant campus life and unmatched career prospects.', intakes: 'Jan, Aug/Sep', avgCost: '₹25–40 Lakhs/yr', workVisa: 'OPT/H1B' },
+  { name: 'United Kingdom', shortName: 'UK', flag: '/images/flags/uk.svg', landmark: '/images/landmarks/uk.png', desc: 'UK degrees are globally respected with mostly 1-year master programmes, saving time and money.', intakes: 'Sep, Jan', avgCost: '₹20–35 Lakhs/yr', workVisa: 'PSW 2 Years' },
+  { name: 'Canada', shortName: 'Canada', flag: '/images/flags/canada.svg', landmark: '/images/landmarks/canada.png', desc: 'Most preferred destination thanks to its PGWP and PR-friendly immigration pathways.', intakes: 'Jan, Sep', avgCost: '₹15–25 Lakhs/yr', workVisa: 'PGWP 3 Years' },
+  { name: 'Australia', shortName: 'Australia', flag: '/images/flags/australia.svg', landmark: '/images/landmarks/australia.png', desc: 'Top-ranked universities, post-study work visas of up to 6 years, and high quality of life.', intakes: 'Feb, Jul', avgCost: '₹20–35 Lakhs/yr', workVisa: 'GTE up to 6 Years' },
+  { name: 'Germany', shortName: 'Germany', flag: '/images/flags/germany.svg', landmark: '/images/landmarks/germany.png', desc: 'Offers tuition-free or very low-cost education at public universities. Land of innovation.', intakes: 'Apr/May, Oct', avgCost: '₹3–8 Lakhs/yr', workVisa: 'Job Seeker Visa' },
+  { name: 'Ireland', shortName: 'Ireland', flag: '/images/flags/ireland.svg', landmark: '/images/landmarks/ireland.png', desc: 'Fastest growing study destination, home to European HQs of Google, Apple and Facebook.', intakes: 'Sep, Jan', avgCost: '₹15–22 Lakhs/yr', workVisa: 'Stay Back 2 Years' },
 ];
 
 const courses = [
