@@ -17,7 +17,7 @@ const AbroadEnquiryModal = ({ isOpen, onClose, defaultCountry = '' }) => {
           <iframe 
             src="https://docs.google.com/forms/d/e/1FAIpQLSel1KRdHenePvupUR9j6qLdETOV5ZeXiU62IltOFb8NDam-ww/viewform?embedded=true" 
             width="100%" 
-            height="2800" 
+            height="700" 
             frameBorder="0" 
             marginHeight="0" 
             marginWidth="0"
