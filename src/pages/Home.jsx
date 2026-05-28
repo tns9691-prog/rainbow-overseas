@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import './Home.css';
 import logo from '../../public/logo.webp';
+import AbroadEnquiryModal from '../components/AbroadEnquiryModal';
 
 const countries = [
   { name: 'United States of America', shortName: 'USA', flag: '/images/flags/usa.svg', landmark: '/images/landmarks/usa.png', desc: 'Home to world-renowned universities. Offers a vibrant campus life and unmatched career prospects.', intakes: 'Jan, Aug/Sep', avgCost: '₹25–40 Lakhs/yr', workVisa: 'OPT/H1B' },
@@ -66,6 +67,8 @@ function Home() {
   const [openFaq, setOpenFaq] = useState(null);
   const [heroLoaded, setHeroLoaded] = useState(false);
   const [visaVisible, setVisaVisible] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalCountry, setModalCountry] = useState('');
   const visaRef = useRef(null);
 
   useEffect(() => {
@@ -233,7 +236,15 @@ function Home() {
                       <div><span>Cost:</span> {c.avgCost}</div>
                       <div><span>Visa:</span> {c.workVisa}</div>
                     </div>
-                    <button className="btn btn-outline-dark btn-sm">Explore →</button>
+                    <button 
+                      className="btn btn-outline-dark btn-sm"
+                      onClick={() => {
+                        setModalCountry(c.name);
+                        setModalOpen(true);
+                      }}
+                    >
+                      Enquiry →
+                    </button>
                   </div>
                 </div>
               </div>
@@ -426,7 +437,11 @@ function Home() {
           </div>
         </div>
       </section>
-
+    <AbroadEnquiryModal 
+      isOpen={modalOpen} 
+      onClose={() => setModalOpen(false)} 
+      defaultCountry={modalCountry} 
+    />
     </div>
   );
 }
