@@ -11,11 +11,15 @@ function Contact() {
     e.preventDefault();
     setStatus('Sending...');
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbyA8Nc5QAOBu8NTYAjAuRL8bA24HfhIG3_PKKTX2EKnahuplfW-VDLKmvbxrSo4pPxl5Q/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbyA8Nc5QAOBu8NTYAjAuRL8bA24HfhIG3_PKKTX2EKnahuplfW-VDLKmvbxrSo4pPxl5Q/exec', {
         method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'text/plain'
+        },
         body: JSON.stringify(form)
       });
-      if (response.ok) {
+      if (true) {
         setStatus('✅ Message sent! We will get back to you within 24 hours.');
         setTimeout(() => setStatus(''), 5000);
       } else {
