@@ -71,27 +71,7 @@ ul {
 }
 
 .text-gradient {
-  background: linear-gradient(
-    90deg,
-    #ff3366,
-    #ff9933,
-    #ffcc00,
-    #33cc99,
-    #3399ff,
-    #9933ff,
-    #ff3366
-  );
-  background-size: 200% auto;
-  color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: rainbow-shine 6s linear infinite;
-}
-
-@keyframes rainbow-shine {
-  0% { background-position: 0% center; }
-  100% { background-position: -200% center; }
+  color: #ffffff;
 }
 
 .btn {
