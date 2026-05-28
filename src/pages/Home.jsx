@@ -4,12 +4,12 @@ import './Home.css';
 import logo from '../../public/logo.webp';
 
 const countries = [
-  { name: 'USA', flag: '/images/flags/usa.png', desc: 'Home to world-renowned universities. Offers a vibrant campus life and unmatched career prospects.', intakes: 'Jan, Aug/Sep', avgCost: '₹25–40 Lakhs/yr', workVisa: 'OPT/H1B' },
-  { name: 'UK', flag: '/images/flags/uk.png', desc: 'UK degrees are globally respected with mostly 1-year master programmes, saving time and money.', intakes: 'Sep, Jan', avgCost: '₹20–35 Lakhs/yr', workVisa: 'PSW 2 Years' },
-  { name: 'Canada', flag: '/images/flags/canada.png', desc: 'Most preferred destination thanks to its PGWP and PR-friendly immigration pathways.', intakes: 'Jan, Sep', avgCost: '₹15–25 Lakhs/yr', workVisa: 'PGWP 3 Years' },
-  { name: 'Australia', flag: '/images/flags/australia.png', desc: 'Top-ranked universities, post-study work visas of up to 6 years, and high quality of life.', intakes: 'Feb, Jul', avgCost: '₹20–35 Lakhs/yr', workVisa: 'GTE up to 6 Years' },
-  { name: 'Germany', flag: '/images/flags/germany.png', desc: 'Offers tuition-free or very low-cost education at public universities. Land of innovation.', intakes: 'Apr/May, Oct', avgCost: '₹3–8 Lakhs/yr', workVisa: 'Job Seeker Visa' },
-  { name: 'Ireland', flag: '/images/flags/ireland.png', desc: 'Fastest growing study destination, home to European HQs of Google, Apple and Facebook.', intakes: 'Sep, Jan', avgCost: '₹15–22 Lakhs/yr', workVisa: 'Stay Back 2 Years' },
+  { name: 'United States of America', shortName: 'USA', flag: '/images/flags/usa.png', landmark: '/images/landmarks/usa.png', desc: 'Home to world-renowned universities. Offers a vibrant campus life and unmatched career prospects.', intakes: 'Jan, Aug/Sep', avgCost: '₹25–40 Lakhs/yr', workVisa: 'OPT/H1B' },
+  { name: 'United Kingdom', shortName: 'UK', flag: '/images/flags/uk.png', landmark: '/images/landmarks/uk.png', desc: 'UK degrees are globally respected with mostly 1-year master programmes, saving time and money.', intakes: 'Sep, Jan', avgCost: '₹20–35 Lakhs/yr', workVisa: 'PSW 2 Years' },
+  { name: 'Canada', shortName: 'Canada', flag: '/images/flags/canada.png', landmark: '/images/landmarks/canada.png', desc: 'Most preferred destination thanks to its PGWP and PR-friendly immigration pathways.', intakes: 'Jan, Sep', avgCost: '₹15–25 Lakhs/yr', workVisa: 'PGWP 3 Years' },
+  { name: 'Australia', shortName: 'Australia', flag: '/images/flags/australia.png', landmark: '/images/landmarks/australia.png', desc: 'Top-ranked universities, post-study work visas of up to 6 years, and high quality of life.', intakes: 'Feb, Jul', avgCost: '₹20–35 Lakhs/yr', workVisa: 'GTE up to 6 Years' },
+  { name: 'Germany', shortName: 'Germany', flag: '/images/flags/germany.png', landmark: '/images/landmarks/germany.png', desc: 'Offers tuition-free or very low-cost education at public universities. Land of innovation.', intakes: 'Apr/May, Oct', avgCost: '₹3–8 Lakhs/yr', workVisa: 'Job Seeker Visa' },
+  { name: 'Ireland', shortName: 'Ireland', flag: '/images/flags/ireland.png', landmark: '/images/landmarks/ireland.png', desc: 'Fastest growing study destination, home to European HQs of Google, Apple and Facebook.', intakes: 'Sep, Jan', avgCost: '₹15–22 Lakhs/yr', workVisa: 'Stay Back 2 Years' },
 ];
 
 const courses = [
@@ -204,20 +204,38 @@ function Home() {
         <div className="container">
           <p className="section-tag center">STUDY ABROAD</p>
           <h2 className="section-title">Choose Your Dream Destination</h2>
-          <div className="country-grid">
+          <div className="dest-banner-grid">
             {countries.map(c => (
-              <div key={c.name} className="country-card" style={{ '--flag-url': `url(${c.flag})` }}>
-                <div className="country-flag">
-                  <img src={c.flag} alt={`${c.name} flag`} />
+              <div key={c.shortName} className="dest-banner-card">
+                <div className="dest-bg-accents">
+                  <div className="dest-red-accent dest-red-top"></div>
+                  <div className="dest-red-accent dest-red-bottom"></div>
                 </div>
-                <h3>{c.name}</h3>
-                <p>{c.desc}</p>
-                <div className="home-country-meta">
-                  <div><span>Intakes:</span> {c.intakes}</div>
-                  <div><span>Avg Cost:</span> {c.avgCost}</div>
-                  <div><span>Work Visa:</span> {c.workVisa}</div>
+                
+                <div className="dest-flag-clip" style={{ backgroundImage: `url(${c.flag})` }}>
+                  <div className="dest-flag-overlay"></div>
                 </div>
-                <button className="btn btn-outline-dark btn-sm" style={{marginTop:'1rem'}}>Explore →</button>
+                
+                <div className="dest-landmark-clip" style={{ backgroundImage: `url(${c.landmark})` }}></div>
+                
+                <div className="dest-airplane">✈️</div>
+
+                <div className="dest-content-overlay">
+                  <div className="dest-titles">
+                    <span className="dest-subtitle">Study in</span>
+                    <h3 className="dest-title" data-text={c.name}>{c.name}</h3>
+                  </div>
+                  
+                  <div className="dest-hover-details">
+                    <p>{c.desc}</p>
+                    <div className="dest-meta-grid">
+                      <div><span>Intakes:</span> {c.intakes}</div>
+                      <div><span>Cost:</span> {c.avgCost}</div>
+                      <div><span>Visa:</span> {c.workVisa}</div>
+                    </div>
+                    <button className="btn btn-outline-dark btn-sm">Explore →</button>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
