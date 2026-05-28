@@ -37,7 +37,9 @@ function Navbar() {
       <div className="container nav-container">
         <Link to="/" className="logo">
           <img src={logo} alt="Rainbow Overseas Logo" className="logo-img" />
-          <span className="logo-text">Rainbow Overseas</span>
+          <span className="logo-text">
+            <span className="logo-rainbow">Rainbow</span> <span className="logo-overseas">Overseas</span>
+          </span>
         </Link>
 
         <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
