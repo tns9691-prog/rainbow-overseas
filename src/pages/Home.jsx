@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import emailjs from '@emailjs/browser';
 import './Home.css';
 import logo from '../../public/logo.webp';
 import AbroadEnquiryModal from '../components/AbroadEnquiryModal';
@@ -100,28 +99,25 @@ function Home() {
   const visaYears    = useCountUp(10, 1800, visaVisible);
   const visaCountries = useCountUp(6, 1500, visaVisible);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('Sending...');
-    const serviceID = 'YOUR_EMAILJS_SERVICE_ID'; // Replace with your actual EmailJS Service ID
-    const templateID = 'YOUR_EMAILJS_TEMPLATE_ID'; // Replace with your actual EmailJS Template ID
-    const publicKey = 'YOUR_EMAILJS_PUBLIC_KEY'; // Replace with your actual EmailJS Public Key
-    const templateParams = {
-      from_name: formData.name,
-      reply_to: 'midn531@gmail.com',
-      mobile_number: formData.mobile,
-      service_requested: formData.service,
-      to_email: 'bijjasrikar25@gmail.com'
-    };
-    emailjs.send(serviceID, templateID, templateParams, publicKey)
-      .then(() => {
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbyA8Nc5QAOBu8NTYAjAuRL8bA24HfhIG3_PKKTX2EKnahuplfW-VDLKmvbxrSo4pPxl5Q/exec', {
+        method: 'POST',
+        body: JSON.stringify(formData)
+      });
+      if (response.ok) {
         setStatus('✅ Enquiry sent! We will contact you shortly.');
         setFormData({ name: '', mobile: '', service: '' });
         setTimeout(() => setStatus(''), 4000);
-      }, () => {
-        setStatus('❌ Failed to send. Please call us directly.');
-        setTimeout(() => setStatus(''), 4000);
-      });
+      } else {
+        throw new Error('Failed');
+      }
+    } catch (error) {
+      setStatus('❌ Failed to send. Please call us directly.');
+      setTimeout(() => setStatus(''), 4000);
+    }
   };
 
   return (

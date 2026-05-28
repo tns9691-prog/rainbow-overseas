@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import { FaFacebook, FaLinkedin, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import './ServicePage.css';
 import './Contact.css';
@@ -8,20 +7,24 @@ function Contact() {
   const [form, setForm] = useState({ name: '', mobile: '', email: '', service: '', message: '' });
   const [status, setStatus] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('Sending...');
-    const serviceID = 'YOUR_EMAILJS_SERVICE_ID'; // Replace with your actual EmailJS Service ID
-    const templateID = 'YOUR_EMAILJS_TEMPLATE_ID'; // Replace with your actual EmailJS Template ID
-    const publicKey = 'YOUR_EMAILJS_PUBLIC_KEY'; // Replace with your actual EmailJS Public Key
-    emailjs.send(serviceID, templateID, {
-      ...form,
-      to_email: 'bijjasrikar25@gmail.com',
-      reply_to: 'midn531@gmail.com',
-      service_requested: form.service
-    }, publicKey)
-      .then(() => { setStatus('✅ Message sent! We will get back to you within 24 hours.'); setTimeout(() => setStatus(''), 5000); })
-      .catch(() => { setStatus('❌ Failed to send. Please call us directly.'); setTimeout(() => setStatus(''), 5000); });
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbyA8Nc5QAOBu8NTYAjAuRL8bA24HfhIG3_PKKTX2EKnahuplfW-VDLKmvbxrSo4pPxl5Q/exec', {
+        method: 'POST',
+        body: JSON.stringify(form)
+      });
+      if (response.ok) {
+        setStatus('✅ Message sent! We will get back to you within 24 hours.');
+        setTimeout(() => setStatus(''), 5000);
+      } else {
+        throw new Error('Failed');
+      }
+    } catch (error) {
+      setStatus('❌ Failed to send. Please call us directly.');
+      setTimeout(() => setStatus(''), 5000);
+    }
   };
 
   return (

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import emailjs from '@emailjs/browser';
 import '../pages/ServicePage.css';
 import './AbroadEnquiryModal.css';
 
@@ -22,21 +21,27 @@ const AbroadEnquiryModal = ({ isOpen, onClose, defaultCountry = '' }) => {
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('Sending...');
-    const serviceID = 'YOUR_EMAILJS_SERVICE_ID'; // Replace with your actual EmailJS Service ID
-    const templateID = 'YOUR_EMAILJS_TEMPLATE_ID'; // Replace with your actual EmailJS Template ID
-    const publicKey = 'YOUR_EMAILJS_PUBLIC_KEY'; // Replace with your actual EmailJS Public Key
-    emailjs.send(serviceID, templateID, { ...form, to_email: 'bijjasrikar25@gmail.com', reply_to: 'midn531@gmail.com', service_requested: 'Education Services Modal' }, publicKey)
-      .then(() => { 
-        setStatus('✅ Enquiry sent! We will contact you shortly.'); 
-        setTimeout(() => { setStatus(''); onClose(); }, 4000); 
-      })
-      .catch(() => { 
-        setStatus('❌ Failed. Please call us.'); 
-        setTimeout(() => setStatus(''), 4000); 
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbyA8Nc5QAOBu8NTYAjAuRL8bA24HfhIG3_PKKTX2EKnahuplfW-VDLKmvbxrSo4pPxl5Q/exec', {
+        method: 'POST',
+        body: JSON.stringify(form)
       });
+      if (response.ok) {
+        setStatus('✅ Enquiry sent! We will contact you shortly.');
+        setTimeout(() => {
+          setStatus('');
+          onClose();
+        }, 4000);
+      } else {
+        throw new Error('Failed');
+      }
+    } catch (error) {
+      setStatus('❌ Failed to send. Please call us directly.');
+      setTimeout(() => setStatus(''), 4000);
+    }
   };
 
   return (

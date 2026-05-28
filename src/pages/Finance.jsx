@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import {
   FcBusinessman,
   FcHome,
@@ -81,30 +80,28 @@ function Finance() {
   const [form, setForm] = useState({ name: '', mobile: '', service: '', message: '' });
   const [status, setStatus] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('Sending...');
-    emailjs
-      .send(
-        'YOUR_EMAILJS_SERVICE_ID', // Replace with your actual EmailJS Service ID
-        'YOUR_EMAILJS_TEMPLATE_ID', // Replace with your actual EmailJS Template ID
-        {
-          ...form,
-          to_email: 'bijjasrikar25@gmail.com',
-          reply_to: 'midn531@gmail.com',
-          service_requested: form.service || 'Finance Services',
-        },
-        'YOUR_EMAILJS_PUBLIC_KEY' // Replace with your actual EmailJS Public Key
-      )
-      .then(() => {
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbyA8Nc5QAOBu8NTYAjAuRL8bA24HfhIG3_PKKTX2EKnahuplfW-VDLKmvbxrSo4pPxl5Q/exec', {
+        method: 'POST',
+        body: JSON.stringify(form)
+      });
+      if (response.ok) {
         setStatus('✅ Enquiry sent! We will contact you shortly.');
         setTimeout(() => setStatus(''), 4000);
-        setForm({ name: '', mobile: '', service: '', message: '' });
-      })
-      .catch(() => {
-        setStatus('❌ Failed. Please call us directly.');
-        setTimeout(() => setStatus(''), 4000);
-      });
+        setForm({
+          fullName: '', mobile: '', email: '', service: '',
+          loanAmount: '', income: '', notes: ''
+        });
+      } else {
+        throw new Error('Failed');
+      }
+    } catch (error) {
+      setStatus('❌ Failed to send. Please call us directly.');
+      setTimeout(() => setStatus(''), 4000);
+    }
   };
 
   return (

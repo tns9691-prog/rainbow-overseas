@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import {
   FcFlashOn,
   FcHome,
@@ -88,37 +87,28 @@ function TravelHolidays() {
   });
   const [status, setStatus] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('Sending...');
-    const serviceID = 'service_kwoikbk';
-    const templateID = 'template_ys91zq1';
-    const publicKey = 'hPyLAGpwUKovu7qvT';
-    emailjs
-      .send(
-        serviceID,
-        templateID,
-        {
-          ...form,
-          to_email: 'bijjasrikar25@gmail.com',
-          reply_to: 'midn531@gmail.com',
-          service_requested: 'Travel & Holidays',
-        },
-        publicKey
-      )
-      .then(() => {
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbyA8Nc5QAOBu8NTYAjAuRL8bA24HfhIG3_PKKTX2EKnahuplfW-VDLKmvbxrSo4pPxl5Q/exec', {
+        method: 'POST',
+        body: JSON.stringify(form)
+      });
+      if (response.ok) {
         setStatus('✅ Enquiry sent! We will contact you shortly.');
         setTimeout(() => setStatus(''), 4000);
         setForm({
           fullName: '', mobile: '', email: '', service: '',
-          destination: '', travelPurpose: '', startDate: '', endDate: '',
-          adults: '', children: '', budgetPerPerson: '', specialNotes: '',
+          destination: '', travelDate: '', specialNotes: ''
         });
-      })
-      .catch(() => {
-        setStatus('❌ Failed. Please call us.');
-        setTimeout(() => setStatus(''), 4000);
-      });
+      } else {
+        throw new Error('Failed');
+      }
+    } catch (error) {
+      setStatus('❌ Failed to send. Please call us directly.');
+      setTimeout(() => setStatus(''), 4000);
+    }
   };
 
   return (
