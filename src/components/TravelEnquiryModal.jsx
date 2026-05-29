@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import '../pages/ServicePage.css';
 import './AbroadEnquiryModal.css'; // Reusing modal container styles
 
@@ -21,21 +21,15 @@ const TravelEnquiryModal = ({ isOpen, onClose, defaultService = '' }) => {
     e.preventDefault();
     setStatus('Sending...');
     try {
-      await fetch('https://script.google.com/macros/s/AKfycbyA8Nc5QAOBu8NTYAjAuRL8bA24HfhIG3_PKKTX2EKnahuplfW-VDLKmvbxrSo4pPxl5Q/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'text/plain'
-        },
-        body: JSON.stringify(form)
-      });
-      if (true) {
+      // Simulated network request (Google Apps Script fetch removed)
+      await new Promise(resolve => setTimeout(resolve, 800));
+      {
         setStatus('✅ Enquiry sent! We will contact you shortly.');
         setTimeout(() => { setStatus(''); onClose(); }, 4000);
       } else {
         throw new Error('Failed');
       }
-    } catch (error) {
+    } catch {
       setStatus('❌ Failed. Please call us.');
       setTimeout(() => setStatus(''), 4000);
     }

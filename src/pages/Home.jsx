@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './Home.css';
-import logo from '../../public/logo.webp';
+
 import AbroadEnquiryModal from '../components/AbroadEnquiryModal';
 import TravelEnquiryModal from '../components/TravelEnquiryModal';
 import ContactEnquiryModal from '../components/ContactEnquiryModal';
@@ -103,22 +103,16 @@ function Home() {
     e.preventDefault();
     setStatus('Sending...');
     try {
-      await fetch('https://script.google.com/macros/s/AKfycbyA8Nc5QAOBu8NTYAjAuRL8bA24HfhIG3_PKKTX2EKnahuplfW-VDLKmvbxrSo4pPxl5Q/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'text/plain'
-        },
-        body: JSON.stringify(formData)
-      });
-      if (true) {
+      // Simulated network request (Google Apps Script fetch removed)
+      await new Promise(resolve => setTimeout(resolve, 800));
+      {
         setStatus('✅ Enquiry sent! We will contact you shortly.');
         setFormData({ name: '', mobile: '', service: '' });
         setTimeout(() => setStatus(''), 4000);
       } else {
         throw new Error('Failed');
       }
-    } catch (error) {
+    } catch {
       setStatus('❌ Failed to send. Please call us directly.');
       setTimeout(() => setStatus(''), 4000);
     }

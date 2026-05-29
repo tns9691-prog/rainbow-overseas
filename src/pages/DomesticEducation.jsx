@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   FcLibrary,
   FcGraduationCap,
@@ -100,9 +100,6 @@ function DomesticEducation() {
       await fetch(googleFormURL, {
         method: 'POST',
         mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
         body: formData
       });
       setStatus('✅ Enquiry sent! We will contact you shortly.');
@@ -113,7 +110,7 @@ function DomesticEducation() {
         preferredIntake: '', startTime: '', emiSupport: '', counselingCall: '',
         agreeToContact: false
       });
-    } catch (error) {
+    } catch {
       setStatus('❌ Failed. Please try again or call us.');
       setTimeout(() => setStatus(''), 4000);
     }

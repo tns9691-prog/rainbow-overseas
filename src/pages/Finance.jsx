@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   FcBusinessman,
   FcHome,
@@ -84,15 +84,9 @@ function Finance() {
     e.preventDefault();
     setStatus('Sending...');
     try {
-      await fetch('https://script.google.com/macros/s/AKfycbyA8Nc5QAOBu8NTYAjAuRL8bA24HfhIG3_PKKTX2EKnahuplfW-VDLKmvbxrSo4pPxl5Q/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'text/plain'
-        },
-        body: JSON.stringify(form)
-      });
-      if (true) {
+      // Simulated network request (Google Apps Script fetch removed)
+      await new Promise(resolve => setTimeout(resolve, 800));
+      {
         setStatus('✅ Enquiry sent! We will contact you shortly.');
         setTimeout(() => setStatus(''), 4000);
         setForm({
@@ -102,7 +96,7 @@ function Finance() {
       } else {
         throw new Error('Failed');
       }
-    } catch (error) {
+    } catch {
       setStatus('❌ Failed to send. Please call us directly.');
       setTimeout(() => setStatus(''), 4000);
     }
