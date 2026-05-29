@@ -123,7 +123,7 @@ function About() {
             <p>Join 1,000+ students and families who have trusted Rainbow Overseas with their international dreams.</p>
           </div>
           <div className="cta-actions">
-            <a href="tel:+918555989544" className="btn btn-white">📞 8555989544</a>
+            <a href="tel:+919059715992" className="btn btn-white">📞 9059715992</a>
             <a href="/contact" className="btn btn-outline-white">Get in Touch</a>
           </div>
         </div>

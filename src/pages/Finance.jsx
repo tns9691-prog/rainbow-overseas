@@ -122,9 +122,7 @@ function Finance() {
           <p className="section-tag" style={{ color: 'rgba(255,255,255,0.6)' }}>
             FINANCE SERVICES
           </p>
-          <div style={{ display: 'inline-block', background: 'rgba(255,255,255,0.2)', padding: '0.4rem 1rem', borderRadius: '50px', marginBottom: '1rem', fontSize: '0.85rem', fontWeight: '600', color: '#fff', letterSpacing: '1px' }}>
-            🏆 AMFI REGISTERED MUTUAL FUND DISTRIBUTOR
-          </div>
+
           <h1>
             Smart Finance Solutions for{' '}
             <span className="text-gradient">Every Goal</span>
@@ -222,7 +220,7 @@ function Finance() {
                 the best loan or investment plan — completely free of charge.
               </p>
               <div className="contact-callout">
-                <a href="tel:+918555989544">📞 8555989544</a>
+                <a href="tel:+919059715992">📞 9059715992</a>
                 <a href="mailto:bijjasrikar25@gmail.com">✉️ bijjasrikar25@gmail.com</a>
               </div>
             </div>

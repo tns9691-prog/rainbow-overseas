@@ -227,7 +227,7 @@ function TravelHolidays() {
                 itinerary — best prices, seamless experience, zero hassle.
               </p>
               <div className="contact-callout">
-                <a href="tel:+918555989544">📞 8555989544</a>
+                <a href="tel:+919059715992">📞 9059715992</a>
                 <a href="mailto:bijjasrikar25@gmail.com">✉️ bijjasrikar25@gmail.com</a>
               </div>
             </div>

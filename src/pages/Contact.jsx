@@ -55,7 +55,7 @@ function Contact() {
                   <div className="info-icon">📞</div>
                   <div>
                     <strong>Call / WhatsApp</strong>
-                    <a href="tel:+918555989544">8555989544</a>
+                    <a href="tel:+919059715992">9059715992</a>
                   </div>
                 </div>
                 <div className="info-card">
@@ -87,7 +87,7 @@ function Contact() {
                   <a href="https://www.facebook.com/profile.php?id=100093534237102" target="_blank" rel="noopener noreferrer" className="social-btn"><FaFacebook /> Facebook</a>
                   <a href="#" className="social-btn"><FaInstagram /> Instagram</a>
                   <a href="https://www.linkedin.com/in/tnswamy/" target="_blank" rel="noopener noreferrer" className="social-btn"><FaLinkedin /> LinkedIn</a>
-                  <a href="https://wa.me/918555989544" target="_blank" rel="noreferrer" className="social-btn wa"><FaWhatsapp /> WhatsApp</a>
+                  <a href="https://wa.me/919059715992" target="_blank" rel="noreferrer" className="social-btn wa"><FaWhatsapp /> WhatsApp</a>
                 </div>
               </div>
 

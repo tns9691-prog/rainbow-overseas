@@ -195,7 +195,7 @@ function AbroadEducation() {
               <h2>Get Free Counselling Today</h2>
               <p>Fill the form and our expert counsellors will reach out to you within 24 hours. No charges, no commitments.</p>
               <div className="contact-callout">
-                <a href="tel:+918555989544">📞 8555989544</a>
+                <a href="tel:+919059715992">📞 9059715992</a>
                 <a href="mailto:bijjasrikar25@gmail.com">✉️ bijjasrikar25@gmail.com</a>
               </div>
             </div>

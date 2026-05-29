@@ -49,7 +49,7 @@ function Insurance() {
           <p className="section-tag" style={{color:'rgba(255,255,255,0.6)'}}>INSURANCE SERVICES</p>
           <h1>Protect What Matters Most with <span className="text-gradient">Right Coverage</span></h1>
           <p>Travel, health, student, and family insurance plans from top-rated insurers. Expert guidance, quick claims, best premiums.</p>
-          <div className="hero-badges"><span>🏆 AMFI REGISTERED MUTUAL FUND DISTRIBUTOR</span><span>IRDA Authorised Advisor</span><span>Top Insurers</span><span>Quick Claims</span></div>
+          <div className="hero-badges"><span>🏆 AMFI Registered Mutual Fund Distributor</span><span>IRDA Authorised Advisor</span><span>Top Insurers</span><span>Quick Claims</span></div>
         </div>
       </div>
 
@@ -99,7 +99,7 @@ function Insurance() {
               <h2>Get the Best Insurance Quote Today</h2>
               <p>Our insurance experts will compare plans from top insurers and recommend the best coverage at the lowest premium for you.</p>
               <div className="contact-callout">
-                <a href="tel:+918555989544">📞 8555989544</a>
+                <a href="tel:+919059715992">📞 9059715992</a>
                 <a href="mailto:bijjasrikar25@gmail.com">✉️ bijjasrikar25@gmail.com</a>
               </div>
             </div>

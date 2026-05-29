@@ -445,8 +445,8 @@ function Home() {
             <p>Call us now or fill our enquiry form. Our counsellors are available 7 days a week.</p>
           </div>
           <div className="cta-actions">
-            <a href="tel:+918555989544" className="btn btn-white">📞 8555989544</a>
-            <a href="https://wa.me/918555989544" target="_blank" rel="noreferrer" className="btn btn-outline-white">💬 WhatsApp Us</a>
+            <a href="tel:+919059715992" className="btn btn-white">📞 9059715992</a>
+            <a href="https://wa.me/919059715992" target="_blank" rel="noreferrer" className="btn btn-outline-white">💬 WhatsApp Us</a>
           </div>
         </div>
       </section>

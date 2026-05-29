@@ -3,8 +3,8 @@ import { FaWhatsapp, FaPhoneAlt } from 'react-icons/fa';
 import './StickyButtons.css';
 
 function StickyButtons() {
-  const phoneNumber = '+918555989544';
-  const whatsappNumber = '+918555989544';
+  const phoneNumber = '+919059715992';
+  const whatsappNumber = '+919059715992';
 
   return (
     <div className="sticky-buttons">
