@@ -100,8 +100,6 @@ function TravelHolidays() {
           fullName: '', mobile: '', email: '', service: '',
           destination: '', travelDate: '', specialNotes: ''
         });
-      } else {
-        throw new Error('Failed');
       }
     } catch {
       setStatus('❌ Failed to send. Please call us directly.');

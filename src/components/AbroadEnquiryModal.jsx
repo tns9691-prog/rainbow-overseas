@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import '../pages/ServicePage.css';
 import './AbroadEnquiryModal.css';
 
@@ -27,16 +27,14 @@ const AbroadEnquiryModal = ({ isOpen, onClose, defaultCountry = '' }) => {
     try {
       // Simulated network request (Google Apps Script fetch removed)
       await new Promise(resolve => setTimeout(resolve, 800));
-      if (true) {
+      {
         setStatus('✅ Enquiry sent! We will contact you shortly.');
         setTimeout(() => {
           setStatus('');
           onClose();
         }, 4000);
-      } else {
-        throw new Error('Failed');
       }
-    } catch (error) {
+    } catch {
       setStatus('❌ Failed to send. Please call us directly.');
       setTimeout(() => setStatus(''), 4000);
     }

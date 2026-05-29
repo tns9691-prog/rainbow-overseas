@@ -109,8 +109,6 @@ function Home() {
         setStatus('✅ Enquiry sent! We will contact you shortly.');
         setFormData({ name: '', mobile: '', service: '' });
         setTimeout(() => setStatus(''), 4000);
-      } else {
-        throw new Error('Failed');
       }
     } catch {
       setStatus('❌ Failed to send. Please call us directly.');

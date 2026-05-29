@@ -93,8 +93,6 @@ function Finance() {
           fullName: '', mobile: '', email: '', service: '',
           loanAmount: '', income: '', notes: ''
         });
-      } else {
-        throw new Error('Failed');
       }
     } catch {
       setStatus('❌ Failed to send. Please call us directly.');

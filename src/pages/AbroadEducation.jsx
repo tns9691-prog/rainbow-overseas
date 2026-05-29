@@ -85,8 +85,6 @@ function AbroadEducation() {
       {
         setStatus('✅ Enquiry sent! We will contact you shortly.');
         setTimeout(() => setStatus(''), 4000);
-      } else {
-        throw new Error('Failed');
       }
     } catch {
       setStatus('❌ Failed. Please call us.');

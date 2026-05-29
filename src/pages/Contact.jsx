@@ -16,8 +16,6 @@ function Contact() {
       {
         setStatus('✅ Message sent! We will get back to you within 24 hours.');
         setTimeout(() => setStatus(''), 5000);
-      } else {
-        throw new Error('Failed');
       }
     } catch {
       setStatus('❌ Failed to send. Please call us directly.');

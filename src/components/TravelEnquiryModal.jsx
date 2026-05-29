@@ -26,8 +26,6 @@ const TravelEnquiryModal = ({ isOpen, onClose, defaultService = '' }) => {
       {
         setStatus('✅ Enquiry sent! We will contact you shortly.');
         setTimeout(() => { setStatus(''); onClose(); }, 4000);
-      } else {
-        throw new Error('Failed');
       }
     } catch {
       setStatus('❌ Failed. Please call us.');

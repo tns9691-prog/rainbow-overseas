@@ -27,8 +27,6 @@ function Insurance() {
           fullName: '', mobile: '', email: '', insuranceType: '', 
           coverageAmount: '', notes: ''
         });
-      } else {
-        throw new Error('Failed');
       }
     } catch {
       setStatus('❌ Failed to send. Please call us directly.');

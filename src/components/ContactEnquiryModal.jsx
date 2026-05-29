@@ -22,8 +22,6 @@ const ContactEnquiryModal = ({ isOpen, onClose, defaultService = 'Visa Services'
       {
         setStatus('✅ Message sent! We will get back to you within 24 hours.');
         setTimeout(() => { setStatus(''); onClose(); }, 5000);
-      } else {
-        throw new Error('Failed');
       }
     } catch {
       setStatus('❌ Failed to send. Please call us directly.');
