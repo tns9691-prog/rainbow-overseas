@@ -87,7 +87,7 @@ function Contact() {
               <div className="map-embed">
                 <iframe
                   title="Rainbow Overseas Location"
-                  src="https://maps.google.com/maps?width=100%25&height=220&hl=en&q=Rainbow+Vistas+Rock+Garden,+Kukatpally,+Hyderabad&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+                  src="https://maps.google.com/maps?q=Rainbow+Vistas+Rock+Garden,+Kukatpally,+Hyderabad&t=&z=14&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="220"
                   style={{border: 0, borderRadius: '0.75rem'}}
