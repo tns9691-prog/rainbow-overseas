@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../pages/ServicePage.css';
 import '../pages/Contact.css';
 import './AbroadEnquiryModal.css';
+import { saveEnquiry } from '../utils/firebaseUtils';
 
 const ContactEnquiryModal = ({ isOpen, onClose, defaultService = 'Visa Services' }) => {
   const [form, setForm] = useState({ name: '', mobile: '', email: '', service: defaultService, message: '' });
@@ -17,11 +18,12 @@ const ContactEnquiryModal = ({ isOpen, onClose, defaultService = 'Visa Services'
     e.preventDefault();
     setStatus('Sending...');
     try {
-      // Simulated network request (Google Apps Script fetch removed)
-      await new Promise(resolve => setTimeout(resolve, 800));
-      {
+      const result = await saveEnquiry('Contact Enquiry Modal', form);
+      if (result.success) {
         setStatus('✅ Message sent! We will get back to you within 24 hours.');
-        setTimeout(() => { setStatus(''); onClose(); }, 5000);
+        setTimeout(() => { setStatus(''); setForm({ name: '', mobile: '', email: '', service: defaultService, message: '' }); onClose(); }, 3000);
+      } else {
+        throw new Error('Failed to save');
       }
     } catch {
       setStatus('❌ Failed to send. Please call us directly.');

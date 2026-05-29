@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { FaFacebook, FaLinkedin, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import './ServicePage.css';
 import './Contact.css';
+import { saveEnquiry } from '../utils/firebaseUtils';
 
 function Contact() {
   const [form, setForm] = useState({ name: '', mobile: '', email: '', service: '', message: '' });
@@ -11,11 +12,13 @@ function Contact() {
     e.preventDefault();
     setStatus('Sending...');
     try {
-      // Simulated network request (Google Apps Script fetch removed)
-      await new Promise(resolve => setTimeout(resolve, 800));
-      {
+      const result = await saveEnquiry('Contact Page', form);
+      if (result.success) {
         setStatus('✅ Message sent! We will get back to you within 24 hours.');
+        setForm({ name: '', mobile: '', email: '', service: '', message: '' });
         setTimeout(() => setStatus(''), 5000);
+      } else {
+        throw new Error('Failed to save');
       }
     } catch {
       setStatus('❌ Failed to send. Please call us directly.');

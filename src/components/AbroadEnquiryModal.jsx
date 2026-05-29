@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import '../pages/ServicePage.css';
 import './AbroadEnquiryModal.css';
+import { saveEnquiry } from '../utils/firebaseUtils';
 
 const countriesList = ['USA', 'UK', 'Canada', 'Australia', 'Germany', 'Ireland'];
 
@@ -25,14 +26,15 @@ const AbroadEnquiryModal = ({ isOpen, onClose, defaultCountry = '' }) => {
     e.preventDefault();
     setStatus('Sending...');
     try {
-      // Simulated network request (Google Apps Script fetch removed)
-      await new Promise(resolve => setTimeout(resolve, 800));
-      {
+      const result = await saveEnquiry('Abroad Education Enquiry', form);
+      if (result.success) {
         setStatus('✅ Enquiry sent! We will contact you shortly.');
         setTimeout(() => {
           setStatus('');
           onClose();
-        }, 4000);
+        }, 3000);
+      } else {
+        throw new Error('Failed to save');
       }
     } catch {
       setStatus('❌ Failed to send. Please call us directly.');

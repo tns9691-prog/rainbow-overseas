@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import '../pages/ServicePage.css';
 import './AbroadEnquiryModal.css'; // Reusing modal container styles
+import { saveEnquiry } from '../utils/firebaseUtils';
 
 const TravelEnquiryModal = ({ isOpen, onClose, defaultService = '' }) => {
   const [form, setForm] = useState({
@@ -21,11 +22,12 @@ const TravelEnquiryModal = ({ isOpen, onClose, defaultService = '' }) => {
     e.preventDefault();
     setStatus('Sending...');
     try {
-      // Simulated network request (Google Apps Script fetch removed)
-      await new Promise(resolve => setTimeout(resolve, 800));
-      {
+      const result = await saveEnquiry('Travel Enquiry', form);
+      if (result.success) {
         setStatus('✅ Enquiry sent! We will contact you shortly.');
-        setTimeout(() => { setStatus(''); onClose(); }, 4000);
+        setTimeout(() => { setStatus(''); onClose(); }, 3000);
+      } else {
+        throw new Error('Failed to save');
       }
     } catch {
       setStatus('❌ Failed. Please call us.');
