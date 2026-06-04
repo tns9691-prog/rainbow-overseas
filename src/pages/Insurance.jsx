@@ -93,7 +93,7 @@ function Insurance() {
               <p>Our insurance experts will compare plans from top insurers and recommend the best coverage at the lowest premium for you.</p>
               <div className="contact-callout">
                 <a href="tel:+919059715992">📞 9059715992</a>
-                <a href="mailto:bijjasrikar25@gmail.com">✉️ bijjasrikar25@gmail.com</a>
+                <a href="mailto:tns9691@gmail.com">✉️ tns9691@gmail.com</a>
               </div>
             </div>
             <form className="enquiry-form" onSubmit={handleSubmit}>

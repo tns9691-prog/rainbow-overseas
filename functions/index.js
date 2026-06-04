@@ -11,7 +11,7 @@ admin.initializeApp();
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: process.env.GMAIL_EMAIL || "bijjasrikar25@gmail.com", // Fallback to your email, but password MUST be set in env
+    user: process.env.GMAIL_EMAIL || "tns9691@gmail.com", // Fallback to your email, but password MUST be set in env
     pass: process.env.GMAIL_PASSWORD,
   },
 });
@@ -34,8 +34,8 @@ exports.sendEmailOnNewEnquiry = functions
   emailBody += "</table>";
 
   const mailOptions = {
-    from: `"Rainbow Overseas Website" <${process.env.GMAIL_EMAIL || "bijjasrikar25@gmail.com"}>`,
-    to: "bijjasrikar25@gmail.com",
+    from: `"Rainbow Overseas Website" <${process.env.GMAIL_EMAIL || "tns9691@gmail.com"}>`,
+    to: "tns9691@gmail.com",
     subject: `New Lead: ${formType} from ${enquiry.name || enquiry.fullName || "Website"}`,
     html: emailBody,
   };

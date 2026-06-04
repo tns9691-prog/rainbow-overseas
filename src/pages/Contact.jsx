@@ -57,7 +57,7 @@ function Contact() {
                   <div className="info-icon">✉️</div>
                   <div>
                     <strong>Email Us</strong>
-                    <a href="mailto:bijjasrikar25@gmail.com">bijjasrikar25@gmail.com</a>
+                    <a href="mailto:tns9691@gmail.com">tns9691@gmail.com</a>
                   </div>
                 </div>
                 <div className="info-card">

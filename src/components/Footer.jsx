@@ -43,7 +43,7 @@ function Footer() {
           <h3>Contact Details</h3>
           <ul>
             <li><strong>📞 Phones:</strong> 9059715992</li>
-            <li><strong>✉️ Emails:</strong> bijjasrikar25@gmail.com</li>
+            <li><strong>✉️ Emails:</strong> tns9691@gmail.com</li>
             <li><strong>🏢 Address:</strong> F-1110, Rainbow Vistas Rock Garden, Green Hills Road, Kukatpally, Hyderabad, 500018</li>
           </ul>
           <div className="social-icons">

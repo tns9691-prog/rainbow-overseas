@@ -13,7 +13,7 @@ function Navbar() {
         <div className="container top-bar-inner">
           <div className="top-bar-left">
             <a href="tel:+919059715992">📞 9059715992</a>
-            <a href="mailto:bijjasrikar25@gmail.com">✉️ bijjasrikar25@gmail.com</a>
+            <a href="mailto:tns9691@gmail.com">✉️ tns9691@gmail.com</a>
             <span>⏰ Mon–Sat: 9 AM – 7 PM</span>
           </div>
           <div className="top-bar-social">
