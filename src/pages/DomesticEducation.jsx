@@ -9,6 +9,7 @@ import {
   FcBriefcase,
 } from 'react-icons/fc';
 import './ServicePage.css';
+import { saveEnquiry } from '../utils/firebaseUtils';
 
 const domesticServices = [
   {
@@ -80,36 +81,20 @@ function DomesticEducation() {
     }
     setStatus('Sending...');
 
-    const googleFormURL = 'https://docs.google.com/forms/d/e/1FAIpQLSeLhjSSKdHsCrN6jl8Uelbu3aytswLSsfZAPaXqitBnW0EA-A/formResponse';
-    
-    const formData = new URLSearchParams();
-    formData.append('entry.1582330556', form.fullName);
-    formData.append('entry.1558877606', form.mobileNumber);
-    formData.append('entry.1225310896', form.state);
-    formData.append('entry.56543812', form.highestQualification);
-    formData.append('entry.971678475', form.courseLevel);
-    formData.append('entry.793595898', form.preferredCourse);
-    formData.append('entry.311491193', form.preferredUniversity);
-    formData.append('entry.1016125168', form.preferredIntake);
-    formData.append('entry.327126680', form.startTime);
-    formData.append('entry.2069343904', form.emiSupport);
-    formData.append('entry.930536495', form.counselingCall);
-    formData.append('entry.1604730003', 'I Agree');
-
     try {
-      await fetch(googleFormURL, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: formData
-      });
-      setStatus('✅ Enquiry sent! We will contact you shortly.');
-      setTimeout(() => setStatus(''), 4000);
-      setForm({
-        fullName: '', mobileNumber: '', state: '', highestQualification: '',
-        courseLevel: '', preferredCourse: '', preferredUniversity: '',
-        preferredIntake: '', startTime: '', emiSupport: '', counselingCall: '',
-        agreeToContact: false
-      });
+      const result = await saveEnquiry('Domestic Education', form);
+      if (result.success) {
+        setStatus('✅ Enquiry sent! We will contact you shortly.');
+        setTimeout(() => setStatus(''), 4000);
+        setForm({
+          fullName: '', mobileNumber: '', state: '', highestQualification: '',
+          courseLevel: '', preferredCourse: '', preferredUniversity: '',
+          preferredIntake: '', startTime: '', emiSupport: '', counselingCall: '',
+          agreeToContact: false
+        });
+      } else {
+        throw new Error('Failed to save');
+      }
     } catch {
       setStatus('❌ Failed. Please try again or call us.');
       setTimeout(() => setStatus(''), 4000);

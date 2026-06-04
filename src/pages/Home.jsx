@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import './Home.css';
+import { saveEnquiry } from '../utils/firebaseUtils';
 
 import AbroadEnquiryModal from '../components/AbroadEnquiryModal';
 import TravelEnquiryModal from '../components/TravelEnquiryModal';
@@ -103,12 +104,13 @@ function Home() {
     e.preventDefault();
     setStatus('Sending...');
     try {
-      // Simulated network request (Google Apps Script fetch removed)
-      await new Promise(resolve => setTimeout(resolve, 800));
-      {
+      const result = await saveEnquiry('Home Page', formData);
+      if (result.success) {
         setStatus('✅ Enquiry sent! We will contact you shortly.');
         setFormData({ name: '', mobile: '', service: '' });
         setTimeout(() => setStatus(''), 4000);
+      } else {
+        throw new Error('Failed to save');
       }
     } catch {
       setStatus('❌ Failed to send. Please call us directly.');

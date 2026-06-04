@@ -12,6 +12,7 @@ import {
 } from 'react-icons/fc';
 import './ServicePage.css';
 import './TravelHolidays.css';
+import { saveEnquiry } from '../utils/firebaseUtils';
 
 const services = [
   {
@@ -91,15 +92,17 @@ function TravelHolidays() {
     e.preventDefault();
     setStatus('Sending...');
     try {
-      // Simulated network request (Google Apps Script fetch removed)
-      await new Promise(resolve => setTimeout(resolve, 800));
-      {
+      const result = await saveEnquiry('Travel & Holidays Enquiry', form);
+      if (result.success) {
         setStatus('✅ Enquiry sent! We will contact you shortly.');
         setTimeout(() => setStatus(''), 4000);
         setForm({
           fullName: '', mobile: '', email: '', service: '',
-          destination: '', travelDate: '', specialNotes: ''
+          destination: '', travelPurpose: '', startDate: '', endDate: '',
+          adults: '', children: '', budgetPerPerson: '', specialNotes: ''
         });
+      } else {
+        throw new Error('Failed to save');
       }
     } catch {
       setStatus('❌ Failed to send. Please call us directly.');

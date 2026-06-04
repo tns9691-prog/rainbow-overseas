@@ -9,6 +9,7 @@ import {
   FcBriefcase,
 } from 'react-icons/fc';
 import './ServicePage.css';
+import { saveEnquiry } from '../utils/firebaseUtils';
 
 const countries = [
   { name: 'USA', flag: '/images/flags/usa.png', desc: 'Home to world-renowned universities like Harvard, MIT, and Stanford. The US offers a vibrant campus life, cutting-edge research, and unmatched career prospects. Over 4,000 accredited institutions await you.', intakes: 'Jan, Aug/Sep', avgCost: '₹25–40 Lakhs/yr', workVisa: 'OPT/H1B', top: ['Harvard University', 'MIT', 'Stanford University', 'University of California'] },
@@ -80,11 +81,12 @@ function AbroadEducation() {
     e.preventDefault();
     setStatus('Sending...');
     try {
-      // Simulated network request (Google Apps Script fetch removed)
-      await new Promise(resolve => setTimeout(resolve, 800));
-      {
+      const result = await saveEnquiry('Abroad Education', form);
+      if (result.success) {
         setStatus('✅ Enquiry sent! We will contact you shortly.');
         setTimeout(() => setStatus(''), 4000);
+      } else {
+        throw new Error('Failed to save');
       }
     } catch {
       setStatus('❌ Failed. Please call us.');

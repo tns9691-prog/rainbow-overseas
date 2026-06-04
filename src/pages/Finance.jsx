@@ -12,6 +12,7 @@ import {
   FcMoneyTransfer,
 } from 'react-icons/fc';
 import './ServicePage.css';
+import { saveEnquiry } from '../utils/firebaseUtils';
 
 const financeServices = [
   {
@@ -84,15 +85,15 @@ function Finance() {
     e.preventDefault();
     setStatus('Sending...');
     try {
-      // Simulated network request (Google Apps Script fetch removed)
-      await new Promise(resolve => setTimeout(resolve, 800));
-      {
+      const result = await saveEnquiry('Finance Enquiry', form);
+      if (result.success) {
         setStatus('✅ Enquiry sent! We will contact you shortly.');
         setTimeout(() => setStatus(''), 4000);
         setForm({
-          fullName: '', mobile: '', email: '', service: '',
-          loanAmount: '', income: '', notes: ''
+          name: '', mobile: '', service: '', message: ''
         });
+      } else {
+        throw new Error('Failed to save');
       }
     } catch {
       setStatus('❌ Failed to send. Please call us directly.');

@@ -1,4 +1,4 @@
-const { onDocumentCreated } = require("firebase-functions/v2/firestore");
+const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 const nodemailer = require("nodemailer");
 
@@ -16,13 +16,11 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-exports.sendEmailOnNewEnquiry = onDocumentCreated("enquiries/{docId}", async (event) => {
-  const snapshot = event.data;
-  if (!snapshot) {
-    return;
-  }
-
-  const enquiry = snapshot.data();
+// HTTP-triggered function to send email
+exports.sendEmailOnNewEnquiry = functions
+  .region("asia-south1")
+  .https.onRequest(async (req, res) => {
+    const enquiry = req.body;
   const formType = enquiry.formType || "Website Enquiry";
 
   // Build the email body from the dynamic form fields
@@ -45,10 +43,9 @@ exports.sendEmailOnNewEnquiry = onDocumentCreated("enquiries/{docId}", async (ev
   try {
     await transporter.sendMail(mailOptions);
     console.log("Email sent successfully!");
-    // Update the document to mark it as processed
-    await snapshot.ref.update({ status: "emailed" });
+    res.status(200).json({ success: true, message: "Email sent successfully!" });
   } catch (error) {
     console.error("Error sending email:", error);
-    await snapshot.ref.update({ status: "error", error: error.toString() });
+    res.status(500).json({ success: false, error: error.toString() });
   }
 });

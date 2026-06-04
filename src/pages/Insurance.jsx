@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './ServicePage.css';
+import { saveEnquiry } from '../utils/firebaseUtils';
 
 const plans = [
   { icon: '✈️', name: 'Travel Insurance', desc: 'Comprehensive travel insurance for domestic and international trips. Covers trip cancellation, medical emergencies, and lost baggage.' },
@@ -18,15 +19,15 @@ function Insurance() {
     e.preventDefault();
     setStatus('Sending...');
     try {
-      // Simulated network request (Google Apps Script fetch removed)
-      await new Promise(resolve => setTimeout(resolve, 800));
-      {
+      const result = await saveEnquiry('Insurance Enquiry', form);
+      if (result.success) {
         setStatus('✅ Enquiry sent! We will contact you shortly.');
         setTimeout(() => setStatus(''), 4000);
         setForm({
-          fullName: '', mobile: '', email: '', insuranceType: '', 
-          coverageAmount: '', notes: ''
+          name: '', mobile: '', plan: '', members: ''
         });
+      } else {
+        throw new Error('Failed to save');
       }
     } catch {
       setStatus('❌ Failed to send. Please call us directly.');
