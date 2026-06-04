@@ -16,36 +16,27 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// HTTP-triggered function to send email
+// Firestore-triggered function to send email when a document is added to 'mail' collection
 exports.sendEmailOnNewEnquiry = functions
-  .region("asia-south1")
-  .https.onRequest(async (req, res) => {
-    const enquiry = req.body;
-  const formType = enquiry.formType || "Website Enquiry";
+  .firestore
+  .document("mail/{docId}")
+  .onCreate(async (snap, context) => {
+    const mailData = snap.data();
+    
+    const mailOptions = {
+      from: `"Rainbow Overseas Website" <${process.env.GMAIL_EMAIL || "tns9691@gmail.com"}>`,
+      to: mailData.to || "tns9691@gmail.com",
+      subject: mailData.message?.subject || "New Website Enquiry",
+      html: mailData.message?.html || "<p>You have a new enquiry.</p>",
+    };
 
-  // Build the email body from the dynamic form fields
-  let emailBody = `<h2>New ${formType} Received</h2><p>Here are the details:</p><table border="1" cellpadding="8" style="border-collapse: collapse;">`;
-  
-  for (const [key, value] of Object.entries(enquiry)) {
-    if (key !== "createdAt" && key !== "formType" && key !== "status") {
-      emailBody += `<tr><td><strong>${key}</strong></td><td>${value}</td></tr>`;
+    try {
+      await transporter.sendMail(mailOptions);
+      console.log("Email sent successfully!");
+      // Optionally update the document status
+      return snap.ref.update({ delivery: { state: "SUCCESS" } });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      return snap.ref.update({ delivery: { state: "ERROR", error: error.toString() } });
     }
-  }
-  emailBody += "</table>";
-
-  const mailOptions = {
-    from: `"Rainbow Overseas Website" <${process.env.GMAIL_EMAIL || "tns9691@gmail.com"}>`,
-    to: "tns9691@gmail.com",
-    subject: `New Lead: ${formType} from ${enquiry.name || enquiry.fullName || "Website"}`,
-    html: emailBody,
-  };
-
-  try {
-    await transporter.sendMail(mailOptions);
-    console.log("Email sent successfully!");
-    res.status(200).json({ success: true, message: "Email sent successfully!" });
-  } catch (error) {
-    console.error("Error sending email:", error);
-    res.status(500).json({ success: false, error: error.toString() });
-  }
 });
