@@ -158,14 +158,14 @@ function Home() {
       {/* Services Strip */}
       <section className="services-strip">
         <div className="container">
-          <div className="services-grid">
+          <div className="services-grid stagger-children">
             {[
               { icon: '🎓', label: 'Abroad Education', path: '/abroad-education' },
               { icon: '🏖️', label: 'Travel & Holidays', path: '/travel-holidays' },
               { icon: '💰', label: 'Finance', path: '/finance' },
               { icon: '🛡️', label: 'Insurance', path: '/insurance' },
             ].map(s => (
-              <div key={s.label} className="service-icon-card">
+              <div key={s.label} className="service-icon-card hover-lift">
                 <div className="icon">{s.icon}</div>
                 <h4>{s.label}</h4>
               </div>
@@ -175,7 +175,7 @@ function Home() {
       </section>
 
       {/* About Strip */}
-      <section className="about-strip section">
+      <section className="about-strip section reveal-up">
         <div className="container about-strip-inner">
           <div className="about-text">
             <p className="section-tag">WHO WE ARE</p>
@@ -202,11 +202,11 @@ function Home() {
 
 
       {/* Study Destinations */}
-      <section className="section countries-section reveal-fade-left">
+      <section className="section countries-section">
         <div className="container">
-          <p className="section-tag center">STUDY ABROAD</p>
-          <h2 className="section-title">Choose Your Dream Destination</h2>
-          <div className="dest-banner-grid">
+          <p className="section-tag center reveal-up">STUDY ABROAD</p>
+          <h2 className="section-title reveal-up">Choose Your Dream Destination</h2>
+          <div className="dest-banner-grid stagger-children">
             {countries.map(c => (
               <div key={c.shortName} className="dest-banner-card">
                 <div className="dest-bg-accents">
@@ -253,11 +253,11 @@ function Home() {
       </section>
 
       {/* Popular Courses */}
-      <section className="section bg-dark-section reveal-zoom-in">
+      <section className="section bg-dark-section">
         <div className="container">
-          <p className="section-tag center" style={{color:'rgba(255,255,255,0.6)'}}>COURSES WE OFFER</p>
-          <h2 className="section-title" style={{color:'white'}}>Popular Courses Abroad</h2>
-          <div className="courses-grid">
+          <p className="section-tag center reveal-up" style={{color:'rgba(255,255,255,0.6)'}}>COURSES WE OFFER</p>
+          <h2 className="section-title reveal-up" style={{color:'white'}}>Popular Courses Abroad</h2>
+          <div className="courses-grid stagger-children">
             {courses.map(c => (
               <div key={c.name} className="course-card">
                 <span className="course-icon">{c.icon}</span>
@@ -269,11 +269,11 @@ function Home() {
       </section>
 
       {/* Top Universities */}
-      <section className="section reveal-fade-right">
+      <section className="section">
         <div className="container">
-          <p className="section-tag center">PARTNER INSTITUTIONS</p>
-          <h2 className="section-title">Top Universities We Work With</h2>
-          <div className="uni-grid">
+          <p className="section-tag center reveal-right">PARTNER INSTITUTIONS</p>
+          <h2 className="section-title reveal-right">Top Universities We Work With</h2>
+          <div className="uni-grid stagger-children">
             {universities.map(u => (
               <div key={u.name} className="uni-card">
                 <div className="uni-rank-badge">{u.rank}</div>
@@ -286,7 +286,7 @@ function Home() {
       </section>
 
       {/* Visa Section */}
-      <section className="section visa-section reveal-fade-left" ref={visaRef}>
+      <section className="section visa-section" ref={visaRef}>
         <div className="container">
           <div className="visa-inner">
             <div>
@@ -313,11 +313,11 @@ function Home() {
       </section>
 
       {/* Travel & Holidays Teaser */}
-      <section className="section travel-teaser reveal-zoom-in">
+      <section className="section travel-teaser">
         <div className="container">
-          <p className="section-tag center">TRAVEL & HOLIDAYS</p>
-          <h2 className="section-title">Explore Our Holiday Packages</h2>
-          <div className="travel-grid">
+          <p className="section-tag center reveal-up">TRAVEL & HOLIDAYS</p>
+          <h2 className="section-title reveal-up">Explore Our Holiday Packages</h2>
+          <div className="travel-grid stagger-children">
             {[
               { name: 'Domestic Tours', icon: '🧳' },
               { name: 'International Tours', icon: '✈️' },
@@ -346,9 +346,9 @@ function Home() {
       </section>
 
       {/* Forex & Insurance */}
-      <section className="section bg-dark-section reveal-fade-left">
+      <section className="section bg-dark-section">
         <div className="container">
-          <div className="forex-ins-grid">
+          <div className="forex-ins-grid stagger-children">
             <div className="forex-ins-card">
               <div className="card-icon">💱</div>
               <h3>Forex Services</h3>
@@ -390,11 +390,11 @@ function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="section reveal-zoom-in">
+      <section className="section">
         <div className="container">
-          <p className="section-tag center">STUDENT STORIES</p>
-          <h2 className="section-title">What Our Students Say</h2>
-          <div className="testimonial-grid">
+          <p className="section-tag center reveal-scale">STUDENT STORIES</p>
+          <h2 className="section-title reveal-scale">What Our Students Say</h2>
+          <div className="testimonial-grid stagger-children">
             {testimonials.map(t => (
               <div key={t.name} className="testimonial-card">
                 <p className="review-text">"{t.review}"</p>
@@ -413,7 +413,7 @@ function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="section faq-section reveal-fade-right">
+      <section className="section faq-section">
         <div className="container">
           <p className="section-tag center">FAQs</p>
           <h2 className="section-title">Frequently Asked Questions</h2>

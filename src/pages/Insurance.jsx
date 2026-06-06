@@ -46,11 +46,11 @@ function Insurance() {
         </div>
       </div>
 
-      <section className="section reveal-fade-left">
+      <section className="section">
         <div className="container">
-          <p className="section-tag center">OUR PLANS</p>
-          <h2 className="section-title">Insurance Plans We Offer</h2>
-          <div className="service-cards-grid">
+          <p className="section-tag center reveal-up">OUR PLANS</p>
+          <h2 className="section-title reveal-up">Insurance Plans We Offer</h2>
+          <div className="service-cards-grid stagger-children">
             {plans.map(p => (
               <div key={p.name} className="svc-card">
                 <div className="svc-icon">{p.icon}</div>
@@ -63,11 +63,11 @@ function Insurance() {
       </section>
 
       {/* Insurance Gallery */}
-      <section className="section bg-white reveal-zoom-in">
+      <section className="section bg-white">
         <div className="container">
-          <p className="section-tag center">PROTECTION FIRST</p>
-          <h2 className="section-title">Peace of Mind</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
+          <p className="section-tag center reveal-up">PROTECTION FIRST</p>
+          <h2 className="section-title reveal-up">Peace of Mind</h2>
+          <div className="stagger-children" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
             <div style={{ borderRadius: '15px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
               <img src="https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?auto=format&fit=crop&w=800&q=80" alt="Family protection" style={{ width: '100%', height: '280px', objectFit: 'cover', display: 'block' }} />
             </div>
@@ -84,7 +84,7 @@ function Insurance() {
         </div>
       </section>
 
-      <section className="section enquiry-section reveal-fade-right">
+      <section className="section enquiry-section">
         <div className="container">
           <div className="enquiry-inner">
             <div className="enquiry-text">

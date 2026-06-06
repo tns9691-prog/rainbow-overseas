@@ -42,9 +42,9 @@ function About() {
       </div>
 
       {/* Mission */}
-      <section className="section reveal-fade-left">
+      <section className="section">
         <div className="container">
-          <div className="about-mission">
+          <div className="about-mission reveal-left">
             <div className="mission-text">
               <p className="section-tag">OUR MISSION</p>
               <h2>Empowering Dreams, Enabling Global Journeys</h2>
@@ -63,11 +63,11 @@ function About() {
       </section>
 
       {/* Values */}
-      <section className="section bg-gray reveal-fade-right">
+      <section className="section bg-gray">
         <div className="container">
-          <p className="section-tag center">WHAT WE STAND FOR</p>
-          <h2 className="section-title">Our Core Values</h2>
-          <div className="service-cards-grid">
+          <p className="section-tag center reveal-up">WHAT WE STAND FOR</p>
+          <h2 className="section-title reveal-up">Our Core Values</h2>
+          <div className="service-cards-grid stagger-children">
             {values.map(v => (
               <div key={v.title} className="svc-card">
                 <div className="svc-icon">{v.icon}</div>
@@ -80,11 +80,11 @@ function About() {
       </section>
 
       {/* Timeline */}
-      <section className="section reveal-zoom-in">
+      <section className="section">
         <div className="container">
-          <p className="section-tag center">OUR JOURNEY</p>
-          <h2 className="section-title">10 Years of Excellence</h2>
-          <div className="timeline">
+          <p className="section-tag center reveal-scale">OUR JOURNEY</p>
+          <h2 className="section-title reveal-scale">10 Years of Excellence</h2>
+          <div className="timeline stagger-children">
             {milestones.map((m, i) => (
               <div key={m.year} className={`timeline-item ${i % 2 === 0 ? 'left' : 'right'}`}>
                 <div className="timeline-card">
@@ -98,11 +98,11 @@ function About() {
       </section>
 
       {/* Team */}
-      <section className="section bg-gray reveal-fade-left">
+      <section className="section bg-gray">
         <div className="container">
-          <p className="section-tag center">OUR TEAM</p>
-          <h2 className="section-title">The People Behind Rainbow Overseas</h2>
-          <div className="team-grid">
+          <p className="section-tag center reveal-up">OUR TEAM</p>
+          <h2 className="section-title reveal-up">The People Behind Rainbow Overseas</h2>
+          <div className="team-grid stagger-children">
             {team.map(t => (
               <div key={t.name} className="team-card">
                 <div className="team-avatar">{t.name[0]}</div>

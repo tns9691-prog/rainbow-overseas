@@ -143,11 +143,11 @@ function TravelHolidays() {
       </div>
 
       {/* Services Grid */}
-      <section className="section travel-services-section reveal-fade-left">
+      <section className="section travel-services-section">
         <div className="container">
-          <p className="section-tag center">WHAT WE OFFER</p>
-          <h2 className="section-title">Our Travel Services</h2>
-          <div className="travel-services-grid">
+          <p className="section-tag center reveal-up">WHAT WE OFFER</p>
+          <h2 className="section-title reveal-up">Our Travel Services</h2>
+          <div className="travel-services-grid stagger-children">
             {services.map((s) => (
               <div key={s.name} className="travel-svc-card">
                 <div className="travel-svc-icon">{s.icon}</div>
@@ -163,11 +163,11 @@ function TravelHolidays() {
       </section>
 
       {/* Travel Gallery */}
-      <section className="section bg-white reveal-zoom-in">
+      <section className="section bg-white">
         <div className="container">
-          <p className="section-tag center">WANDERLUST</p>
-          <h2 className="section-title">Explore Beautiful Destinations</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
+          <p className="section-tag center reveal-up">WANDERLUST</p>
+          <h2 className="section-title reveal-up">Explore Beautiful Destinations</h2>
+          <div className="stagger-children" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
             <div style={{ borderRadius: '15px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
               <img src="/images/travel1.png" alt="Airplane flight" style={{ width: '100%', height: '280px', objectFit: 'cover', display: 'block' }} />
             </div>
@@ -187,13 +187,13 @@ function TravelHolidays() {
       {/* Why Choose Us */}
       <section className="section bg-dark-section">
         <div className="container">
-          <p className="section-tag center" style={{ color: 'rgba(255,255,255,0.6)' }}>
+          <p className="section-tag center reveal-up" style={{ color: 'rgba(255,255,255,0.6)' }}>
             WHY RAINBOW OVERSEAS
           </p>
-          <h2 className="section-title" style={{ color: 'white' }}>
+          <h2 className="section-title reveal-up" style={{ color: 'white' }}>
             Your Trusted Travel Partner
           </h2>
-          <div className="why-travel-grid">
+          <div className="why-travel-grid stagger-children">
             {[
               { emoji: '💰', title: 'Best Price Guarantee', desc: 'We match or beat any comparable quote. No hidden charges, ever.' },
               { emoji: '🛡️', title: 'Safe &amp; Insured', desc: 'All packages include travel insurance options for complete peace of mind.' },

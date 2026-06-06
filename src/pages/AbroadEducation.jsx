@@ -111,11 +111,11 @@ function AbroadEducation() {
       </div>
 
       {/* Services Grid */}
-      <section className="section bg-gray reveal-fade-left">
+      <section className="section bg-gray">
         <div className="container">
-          <p className="section-tag center">WHAT WE OFFER</p>
-          <h2 className="section-title">Our Abroad Education Services</h2>
-          <div className="finance-services-grid">
+          <p className="section-tag center reveal-up">WHAT WE OFFER</p>
+          <h2 className="section-title reveal-up">Our Abroad Education Services</h2>
+          <div className="finance-services-grid stagger-children">
             {abroadServices.map(s => (
               <div key={s.title} className="finance-svc-card">
                 <div className="finance-svc-icon">{s.icon}</div>
@@ -131,11 +131,11 @@ function AbroadEducation() {
       </section>
 
       {/* Student Gallery */}
-      <section className="section bg-white reveal-zoom-in">
+      <section className="section bg-white">
         <div className="container">
-          <p className="section-tag center">STUDENT LIFE</p>
-          <h2 className="section-title">Experience Global Education</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
+          <p className="section-tag center reveal-up">STUDENT LIFE</p>
+          <h2 className="section-title reveal-up">Experience Global Education</h2>
+          <div className="stagger-children" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
             <div style={{ borderRadius: '15px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
               <img src="/images/education2.jpeg" alt="Male student studying abroad" style={{ width: '100%', height: '280px', objectFit: 'cover', display: 'block' }} />
             </div>
@@ -153,11 +153,11 @@ function AbroadEducation() {
       </section>
 
       {/* Countries */}
-      <section className="section bg-gray reveal-fade-right">
+      <section className="section bg-gray">
         <div className="container">
-          <p className="section-tag center">DESTINATIONS</p>
-          <h2 className="section-title">Countries We Specialise In</h2>
-          <div className="country-detail-grid">
+          <p className="section-tag center reveal-right">DESTINATIONS</p>
+          <h2 className="section-title reveal-right">Countries We Specialise In</h2>
+          <div className="country-detail-grid stagger-children">
             {countries.map(c => (
               <div key={c.name} className="country-detail-card" style={{ '--flag-url': `url(${c.flag})` }}>
                 <div className="cdc-header">

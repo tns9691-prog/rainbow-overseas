@@ -134,11 +134,11 @@ function Finance() {
         </div>
       </div>
 
-      <section className="section bg-gray reveal-fade-left">
+      <section className="section bg-gray">
         <div className="container">
-          <p className="section-tag center">WHAT WE OFFER</p>
-          <h2 className="section-title">Our Financial Services</h2>
-          <div className="finance-services-grid">
+          <p className="section-tag center reveal-up">WHAT WE OFFER</p>
+          <h2 className="section-title reveal-up">Our Financial Services</h2>
+          <div className="finance-services-grid stagger-children">
             {financeServices.map(s => (
               <div key={s.title} className="finance-svc-card">
                 <div className="finance-svc-icon">{s.icon}</div>
@@ -154,11 +154,11 @@ function Finance() {
       </section>
 
       {/* Finance Gallery */}
-      <section className="section bg-white reveal-zoom-in">
+      <section className="section bg-white">
         <div className="container">
-          <p className="section-tag center">FINANCIAL FREEDOM</p>
-          <h2 className="section-title">Secure Your Future</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
+          <p className="section-tag center reveal-up">FINANCIAL FREEDOM</p>
+          <h2 className="section-title reveal-up">Secure Your Future</h2>
+          <div className="stagger-children" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
             <div style={{ borderRadius: '15px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
               <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=800&q=80" alt="Financial planning" style={{ width: '100%', height: '280px', objectFit: 'cover', display: 'block' }} />
             </div>
@@ -178,13 +178,13 @@ function Finance() {
       {/* Why Us Strip */}
       <section className="section bg-dark-section">
         <div className="container">
-          <p className="section-tag center" style={{ color: 'rgba(255,255,255,0.6)' }}>
+          <p className="section-tag center reveal-up" style={{ color: 'rgba(255,255,255,0.6)' }}>
             WHY RAINBOW OVERSEAS FINANCE
           </p>
-          <h2 className="section-title" style={{ color: 'white' }}>
+          <h2 className="section-title reveal-up" style={{ color: 'white' }}>
             Trusted by 1000+ Customers
           </h2>
-          <div className="why-travel-grid">
+          <div className="why-travel-grid stagger-children">
             {[
               { emoji: '⚡', title: 'Quick Approvals', desc: 'Loan approvals within 24–48 hours with minimal documentation.' },
               { emoji: '💰', title: 'Best Interest Rates', desc: 'We compare 20+ lenders to get you the most competitive rate.' },

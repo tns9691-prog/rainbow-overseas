@@ -1,0 +1,228 @@
+/* ============================================================
+   ARCHIGREEN-INSPIRED ANIMATIONS — Rainbow Overseas
+   Scroll reveals, staggered cards, marquee strips, parallax
+   ============================================================ */
+
+/* ── Smooth scrolling ─────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Scroll progress bar (top of viewport) ────────────────── */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #2563eb, #60a5fa, #2563eb);
+  background-size: 200% 100%;
+  animation: progressShimmer 2s linear infinite;
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+@keyframes progressShimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Base reveal: hidden state ────────────────────────────── */
+.reveal,
+.reveal-up,
+.reveal-left,
+.reveal-right,
+.reveal-scale,
+.reveal-clip {
+  opacity: 0;
+  will-change: opacity, transform;
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* slide up */
+.reveal-up      { transform: translateY(48px); }
+/* slide from left */
+.reveal-left    { transform: translateX(-60px); }
+/* slide from right */
+.reveal-right   { transform: translateX(60px); }
+/* scale zoom */
+.reveal-scale   { transform: scale(0.88); }
+/* clip reveal (wipe from bottom) */
+.reveal-clip {
+  clip-path: inset(100% 0 0 0);
+  transform: none;
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── Visible state (added by IntersectionObserver) ────────── */
+.reveal.in-view,
+.reveal-up.in-view,
+.reveal-left.in-view,
+.reveal-right.in-view,
+.reveal-scale.in-view {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+.reveal-clip.in-view {
+  opacity: 1;
+  clip-path: inset(0% 0 0 0);
+}
+
+/* ── Stagger helpers (apply to children) ─────────────────── */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stagger-children.in-view > *:nth-child(1)  { opacity:1; transform:none; transition-delay: 0.05s; }
+.stagger-children.in-view > *:nth-child(2)  { opacity:1; transform:none; transition-delay: 0.13s; }
+.stagger-children.in-view > *:nth-child(3)  { opacity:1; transform:none; transition-delay: 0.21s; }
+.stagger-children.in-view > *:nth-child(4)  { opacity:1; transform:none; transition-delay: 0.29s; }
+.stagger-children.in-view > *:nth-child(5)  { opacity:1; transform:none; transition-delay: 0.37s; }
+.stagger-children.in-view > *:nth-child(6)  { opacity:1; transform:none; transition-delay: 0.45s; }
+.stagger-children.in-view > *:nth-child(7)  { opacity:1; transform:none; transition-delay: 0.53s; }
+.stagger-children.in-view > *:nth-child(8)  { opacity:1; transform:none; transition-delay: 0.61s; }
+.stagger-children.in-view > *:nth-child(9)  { opacity:1; transform:none; transition-delay: 0.69s; }
+.stagger-children.in-view > *:nth-child(10) { opacity:1; transform:none; transition-delay: 0.77s; }
+.stagger-children.in-view > *:nth-child(11) { opacity:1; transform:none; transition-delay: 0.85s; }
+.stagger-children.in-view > *:nth-child(12) { opacity:1; transform:none; transition-delay: 0.93s; }
+
+/* ── Marquee strip ────────────────────────────────────────── */
+.marquee-strip {
+  overflow: hidden;
+  background: var(--primary-dark);
+  padding: 0.9rem 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 28s linear infinite;
+}
+
+.marquee-track:hover { animation-play-state: paused; }
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  white-space: nowrap;
+  padding: 0 2.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+}
+
+.marquee-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #2563eb;
+  flex-shrink: 0;
+}
+
+/* ── Section title line-reveal ────────────────────────────── */
+.title-reveal-wrap {
+  overflow: hidden;
+  display: block;
+}
+
+.title-reveal-inner {
+  display: block;
+  transform: translateY(100%);
+  opacity: 0;
+  transition:
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.5s ease;
+}
+
+.in-view .title-reveal-inner,
+.title-reveal-wrap.in-view .title-reveal-inner {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ── Parallax host ────────────────────────────────────────── */
+.parallax-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  inset: -15%;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* ── Hover lift (global upgrade for cards) ────────────────── */
+.hover-lift {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-10px) scale(1.015);
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.12),
+    0 6px 15px rgba(0,0,0,0.07);
+}
+
+/* ── Underline draw on hover ─────────────────────────────── */
+.underline-draw {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-draw::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #2563eb;
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.underline-draw:hover::after { width: 100%; }
+
+/* ── Reduced-motion overrides ─────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  .marquee-track,
+  .reveal,
+  .reveal-up,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale,
+  .reveal-clip,
+  .stagger-children > * {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    clip-path: none !important;
+  }
+}
