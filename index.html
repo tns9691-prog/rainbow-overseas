@@ -1,6 +1,22 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Subdomain Redirect Logic -->
+    <script>
+      (function() {
+        var host = window.location.hostname;
+        var isLocal = host.includes('localhost');
+        var baseDomain = isLocal ? 'http://localhost:5173' : 'https://www.rainbowoverseas.in';
+        
+        if (host.startsWith('finance.')) {
+          window.location.replace(baseDomain + '/finance');
+        } else if (host.startsWith('travel.')) {
+          window.location.replace(baseDomain + '/travel-holidays');
+        } else if (host.startsWith('insurance.') || host.startsWith('insurence.')) {
+          window.location.replace(baseDomain + '/insurance');
+        }
+      })();
+    </script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TRGNPF71Z"></script>
 <script>

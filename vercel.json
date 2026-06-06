@@ -1,4 +1,50 @@
 {
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "finance.rainbowoverseas.in"
+        }
+      ],
+      "destination": "https://www.rainbowoverseas.in/finance",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "travel.rainbowoverseas.in"
+        }
+      ],
+      "destination": "https://www.rainbowoverseas.in/travel-holidays",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "insurance.rainbowoverseas.in"
+        }
+      ],
+      "destination": "https://www.rainbowoverseas.in/insurance",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "insurence.rainbowoverseas.in"
+        }
+      ],
+      "destination": "https://www.rainbowoverseas.in/insurance",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
