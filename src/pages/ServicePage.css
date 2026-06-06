@@ -459,12 +459,58 @@
 }
 
 /* ========== RESPONSIVE ========== */
+@media (max-width: 900px) {
+  .enquiry-inner { flex-direction: column; gap: 3rem; }
+}
+
 @media (max-width: 768px) {
   .hero-container { flex-direction: column; }
   .hero-form { width: 100%; }
   .enquiry-form { width: 100%; }
-  .enquiry-inner { flex-direction: column; }
   .about-strip-inner { flex-direction: column; }
   .visa-inner { flex-direction: column; }
   .finance-svc-card, .travel-svc-card { flex-direction: column; gap: 0.75rem; }
+  .rates-grid { justify-content: center; }
+}
+
+@media (max-width: 600px) {
+  .page-hero { padding: 5rem 0 3.5rem; }
+  .page-hero h1 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
+  .hero-badges { gap: 0.75rem; }
+  .hero-badges span { font-size: 0.75rem; padding: 0.3rem 0.9rem; }
+  
+  .service-cards-grid,
+  .country-detail-grid,
+  .process-grid,
+  .finance-services-grid,
+  .travel-services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .svc-card,
+  .country-detail-card,
+  .process-card,
+  .finance-svc-card,
+  .travel-svc-card {
+    padding: 1.5rem;
+  }
+  
+  .enquiry-form { padding: 1.5rem; }
+  .enquiry-form h3 { font-size: 1.3rem; }
+  .enquiry-form input,
+  .enquiry-form select,
+  .enquiry-form textarea { padding: 0.75rem 0.9rem; font-size: 0.9rem; }
+  
+  .cdc-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .big-flag img { width: 32px; }
+}
+
+@media (max-width: 480px) {
+  .page-hero { padding: 4rem 0 3rem; }
+  .page-hero h1 { font-size: clamp(1.4rem, 3vw, 1.8rem); }
+  .svc-icon { font-size: 2rem; }
+  .process-step { font-size: 2rem; }
+  .rate-card { min-width: 100%; }
+  .enquiry-text h2 { font-size: clamp(1.3rem, 2.5vw, 1.6rem); }
 }

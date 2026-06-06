@@ -191,11 +191,34 @@
 .cta-inner > div > p { color: rgba(255,255,255,0.75); }
 .cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 
+@media (max-width: 900px) {
+  .about-mission { flex-direction: column; gap: 3rem; }
+  .mission-stats { width: 100%; }
+}
+
 @media (max-width: 768px) {
   .timeline::before { left: 0; }
   .timeline-card { width: 90%; margin-left: 1.5rem; }
   .timeline-item.right { justify-content: flex-start; }
   .timeline-item.right .timeline-card { border-left: 4px solid #2563eb; border-right: none; }
-  .about-mission { flex-direction: column; }
-  .mission-stats { width: 100%; }
+}
+
+@media (max-width: 600px) {
+  .mission-stats { grid-template-columns: 1fr; gap: 1rem; }
+  .mstat { padding: 1.5rem; }
+  .mstat span { font-size: 2rem; }
+  
+  .timeline-card { width: 95%; padding: 1.25rem; }
+  .timeline-year { font-size: 1.3rem; }
+  
+  .team-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .team-card { padding: 2rem 1.5rem; }
+  
+  .cta-inner { flex-direction: column; text-align: center; gap: 1.5rem; }
+  .cta-actions { justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .mission-text h2 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
+  .team-avatar { width: 60px; height: 60px; font-size: 1.5rem; }
 }
